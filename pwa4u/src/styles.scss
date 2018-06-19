@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-// @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 // @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
@@ -31,6 +31,7 @@ textarea,
 label,
 blockquote,
 table,
+button,
 th,
 td {
   margin: 0;
@@ -91,6 +92,11 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+/* MY RESETS */
+button {
+  font-size: 14px;
 }
 
 /* color variables */

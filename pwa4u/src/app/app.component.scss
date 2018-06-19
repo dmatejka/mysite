@@ -2,8 +2,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80vh;
-  margin-bottom: 10vh;
+  // height: 74vh;
+  margin-top: 2em;
+  margin-bottom: 2em;
   overflow: hidden;
   .container {
     display: flex;
@@ -186,7 +187,8 @@
 #header {
   background-color: var(--main-primary-color);
   color: var(--light-primary-color);
-  height: 5rem;
+  height: 10vh;
+  min-height: 4em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -195,11 +197,11 @@
   .title {
     text-align: center;
     .action {
-      font-size: 1rem;
+      font-size: 0.9rem;
       font-weight: 300;
     }
     .subject {
-      font-size: 1.5em;
+      font-size: 1.3em;
       font-weight: 500;
     }
   }
@@ -226,15 +228,54 @@
 #subtitle {
   // margin-top: 1em;
   // position: absolute;
-  height: 10vh;
-  margin-top: 5vh;
+  height: 6vh;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   img {
-    width: 50vw;
-    max-height: 8vh;
+    max-width: 80vw;
+    max-height: 30vh;
   }
+}
+.CTA {
+  position: absolute;
+  // height: 5em;
+  // overflow: hidden;
+  // transform-origin: 100% 100%;
+  right: 15vw;
+  bottom: 15vh;
+  button {
+    background-color: var(--main-primary-color);
+    color: whitesmoke;
+    z-index: 100;
+    // &::before {
+    //   content: url('/assets/icons/baseline-chat-24px.svg');
+    //   // content: 'aaa';
+    svg{
+      // margin-right: .5em;
+      .icon {
+        fill: whitesmoke;
+      // }
+      }
+    }
+  }
+  .big{
+    display: none;
+  }
+}
+@media only screen and (min-width: 600px) and (min-height: 500px) {
+.CTA {
+  right: 15vw;
+  bottom: 15vh;
+  .big{
+  display: block;
+}
+.FAB{
+  display: none;
+  }
+}
 }
