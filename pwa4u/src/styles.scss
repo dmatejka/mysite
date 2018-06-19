@@ -82,8 +82,21 @@ select {
   font-weight: inherit;
 }
 
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* color variables */
+
 :root {
   --main-primary-color: #86078b;
+  --light-primary-color: #f3eef3;
   --main-UX-color: #0083db;
   --main-FE-color: #00b5db;
   --main-SL-color: #f87400;
