@@ -1,21 +1,29 @@
 #menu {
-  font-size: 5vw;
+  // font-size: 5vw;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
   .container {
     display: flex;
-    width: 20em;
-    height: 20em;
+    width: 80vw;
+    height: 80vw;
+    max-width: 80vh;
+    max-height: 80vh;
     flex-wrap: wrap;
     div {
+      width: 40vw;
+      height: 40vw;
+      max-width: 40vh;
+      max-height: 40vh;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 500;
       color: white;
+      opacity: 0;
       span {
+        font-size: 1.5rem;
         opacity: 0.5;
       }
     }
@@ -23,73 +31,73 @@
 }
 
 #UX-menu {
-  width: 10em;
-  height: 10em;
   background-color: var(--main-UX-color);
   z-index: 4;
   transform-origin: 100% 100%;
-  animation: UXMenuAnimation 190ms 1 0s linear;
+  animation: UXMenuAnimation 1900ms 1 0s linear forwards;
 }
 
 #FE-menu {
-  width: 10em;
-  height: 10em;
   z-index: 3;
   background-color: var(--main-FE-color);
   transform-origin: 0% 100%;
-  animation: FEMenuAnimation 290ms 1 0s linear;
+  animation: FEMenuAnimation 2900ms 1 0s linear forwards;
 }
 
 #BE-menu {
-  width: 10em;
-  height: 10em;
   z-index: 2;
   background-color: var(--main-BE-color);
   transform-origin: 0% 0%;
-  animation: BEMenuAnimation 390ms 1 0s linear;
+  animation: BEMenuAnimation 3900ms 1 0s linear forwards;
 }
 
 #SL-menu {
-  width: 10em;
-  height: 10em;
   z-index: 1;
   background-color: var(--main-SL-color);
   transform-origin: 100% 0%;
-  animation: SLMenuAnimation 490ms 1 0s linear;
+  animation: SLMenuAnimation 4900ms 1 0s linear forwards;
 }
 
 @keyframes UXMenuAnimation {
   0% {
+    opacity: 1;
     transform: rotate(-90deg) scale(0.2);
   }
   100% {
+    opacity: 1;
     transform: rotate(0deg) scale(1);
   }
 }
 
 @keyframes FEMenuAnimation {
   0% {
+    opacity: 1;
     transform: rotate(-180deg) scale(0.2);
   }
   100% {
+    opacity: 1;
     transform: rotate(0deg) scale(1);
   }
 }
 
 @keyframes BEMenuAnimation {
   0% {
+    opacity: 1;
     transform: rotate(-270deg) scale(0.2);
   }
   100% {
+    opacity: 1;
     transform: rotate(0deg) scale(1);
   }
 }
 
 @keyframes SLMenuAnimation {
   0% {
+    opacity: 1;
     transform: rotate(-360deg) scale(0.2);
   }
   100% {
+    opacity: 1;
     transform: rotate(0deg) scale(1);
   }
 }
