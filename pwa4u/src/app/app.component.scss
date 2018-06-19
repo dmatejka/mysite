@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  // height: 74vh;
   margin-top: 2em;
   margin-bottom: 2em;
   overflow: hidden;
@@ -13,8 +12,6 @@
     max-width: 70vh;
     max-height: 70vh;
     flex-wrap: wrap;
-    transform: scale(0.1);
-    animation: MenuAnimationRotate 450ms 350ms ease-out forwards;
     div {
       width: 40vw;
       height: 40vw;
@@ -25,12 +22,10 @@
       justify-content: center;
       font-weight: 500;
       color: white;
-      opacity: 0;
       border: 4px solid var(--light-primary-color);
-      animation: MenuAnimation 650ms linear forwards;
       span {
         font-size: 1.5rem;
-        opacity: 0;
+        opacity: 0.5;
       }
     }
   }
@@ -40,153 +35,24 @@
   background-color: var(--main-UX-color);
   z-index: 4;
   transform-origin: 100% 100%;
-  span {
-    animation: flicker-in 300ms 300ms ease-in forwards;
-  }
 }
 
 #FE-menu {
   z-index: 3;
   background-color: var(--main-FE-color);
   transform-origin: 0% 100%;
-  span {
-    animation: flicker-in 300ms 350ms ease-in forwards;
-  }
 }
 
 #BE-menu {
   z-index: 2;
   background-color: var(--main-BE-color);
   transform-origin: 0% 0%;
-  span {
-    animation: flicker-in 300ms 380ms ease-in forwards;
-  }
 }
 
 #SL-menu {
   z-index: 1;
   background-color: var(--main-SL-color);
   transform-origin: 100% 0%;
-  span {
-    animation: flicker-in 300ms 320ms ease-in forwards;
-  }
-}
-
-@keyframes MenuAnimation {
-  0% {
-    opacity: 1;
-    // margin: 20px;
-    // transform: rotate(-90deg);
-    border-radius: 33%;
-  }
-  100% {
-    opacity: 1;
-    // margin: 0px;
-    // transform: rotate(0deg);
-    border-radius: 0%;
-  }
-}
-
-@keyframes MenuAnimationRotate {
-  0% {
-    transform: scale(0.1) rotate(-360deg);
-  }
-  75% {
-    transform: scale(0.5) rotate(-45deg);
-  }
-  100% {
-    transform: scale(1) rotate(0deg);
-  }
-}
-
-@keyframes flicker-in {
-  0% {
-    opacity: 0;
-  }
-  10.1% {
-    opacity: 0.7;
-  }
-  10.2% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 0;
-  }
-  20.1% {
-    opacity: 0.7;
-  }
-  20.6% {
-    opacity: 0;
-  }
-  30.1% {
-    opacity: 0.7;
-  }
-  30.5% {
-    opacity: 0.7;
-  }
-  30.6% {
-    opacity: 0;
-  }
-  45% {
-    opacity: 0;
-  }
-  45.1% {
-    opacity: 0.7;
-  }
-  50% {
-    opacity: 0.7;
-  }
-  55% {
-    opacity: 0.7;
-  }
-  55.1% {
-    opacity: 0;
-  }
-  57% {
-    opacity: 0;
-  }
-  57.1% {
-    opacity: 0.7;
-  }
-  60% {
-    opacity: 0.7;
-  }
-  60.1% {
-    opacity: 0;
-  }
-  65% {
-    opacity: 0;
-  }
-  65.1% {
-    opacity: 0.7;
-  }
-  75% {
-    opacity: 0.7;
-  }
-  75.1% {
-    opacity: 0;
-  }
-  77% {
-    opacity: 0;
-  }
-  77.1% {
-    opacity: 0.7;
-  }
-  85% {
-    opacity: 0.7;
-  }
-  85.1% {
-    opacity: 0;
-  }
-  86% {
-    opacity: 0;
-  }
-  86.1% {
-    opacity: 0.7;
-  }
-  100% {
-    opacity: 0.5;
-  }
 }
 
 /* HEADER */
@@ -232,8 +98,6 @@
 /* subtitle image */
 
 #subtitle {
-  // margin-top: 1em;
-  // position: absolute;
   height: 6vh;
   margin-top: 1vh;
   margin-bottom: 1vh;
@@ -249,9 +113,6 @@
 }
 .CTA {
   position: absolute;
-  // height: 5em;
-  // overflow: hidden;
-  // transform-origin: 100% 100%;
   right: 15vw;
   bottom: 15vh;
   button {
@@ -262,10 +123,8 @@
     //   content: url('/assets/icons/baseline-chat-24px.svg');
     //   // content: 'aaa';
     svg {
-      // margin-right: .5em;
       .icon {
         fill: whitesmoke;
-        // }
       }
     }
   }

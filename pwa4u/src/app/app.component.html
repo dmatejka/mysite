@@ -17,7 +17,7 @@
   <img src="/assets/mobile-and-desktop1.svg">
 </div>
 
-<div class="menu" id="menu">
+<div class="menu" id="menu" [@menuloading]=true>
   <div class="container">
     <div class="UX" id="UX-menu">
       <span>UX/UI</span>
@@ -35,19 +35,23 @@
 </div>
 <div class="CTA">
   <button class="FAB" mat-fab color="primary">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <svg:path class="icon" d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/>
-        <svg:path d="M0 0h24v24H0z" fill="none"/>
-        </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <svg:path class="icon" d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"
+      />
+      <svg:path d="M0 0h24v24H0z" fill="none" />
+    </svg>
   </button>
-  
+
   <button class="big" mat-raised-button color="primary">
     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24">
-    <svg:path class="icon" d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/>
-    <svg:path d="M0 0h24v24H0z" fill="none"/>
+      <svg:path class="icon" d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"
+      />
+      <svg:path d="M0 0h24v24H0z" fill="none" />
     </svg>
     LET'S TALK</button>
 </div>
 
-
-<router-outlet></router-outlet>
+<!--
+<div class="route-container" [@routeAnimations]="prepareRouteAnimation(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
+</div> -->
