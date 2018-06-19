@@ -1,3 +1,104 @@
+#premenu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    max-width: 80vh;
+    max-height: 80vh;
+    flex-wrap: wrap;
+    animation: PreMenuAnimationRotate 600ms linear infinite;
+    div {
+      width: 1em;
+      height: 1em;
+      max-width: 40vh;
+      max-height: 40vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      // opacity: 0;
+      border: 2px solid var(--light-primary-color);
+    }
+  }
+  .UX {
+    border-radius: 50%;
+    background-color: var(--main-UX-color);
+    z-index: 4;
+    animation: PreMenuAnimation 3750ms ease-out forwards;
+    transform-origin: 2em 2em;
+  }
+
+  .FE {
+    border-radius: 50%;
+    z-index: 3;
+    background-color: var(--main-FE-color);
+    animation: PreMenuAnimation 3750ms ease-out forwards;
+    transform-origin: -2em 2em;
+  }
+
+  .BE {
+    border-radius: 50%;
+    z-index: 2;
+    background-color: var(--main-BE-color);
+    animation: PreMenuAnimation 3750ms ease-out forwards;
+    transform-origin: 2em -2em;
+  }
+
+  .SL {
+    border-radius: 50%;
+    z-index: 1;
+    background-color: var(--main-SL-color);
+    animation: PreMenuAnimation 3750ms ease-out forwards;
+    transform-origin: -2em -2em;
+  }
+}
+
+@keyframes PreMenuAnimation {
+  0% {
+    opacity: 0;
+    // width: 12em;
+    transform: rotate(-360deg);
+  }
+  100% {
+    opacity: 1;
+    // width: 2em;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes PreMenuAnimationRotate {
+  0% {
+    // opacity: 0;
+    // width: 4em;
+    transform: rotate(-360deg);
+  }
+  100% {
+    // opacity: 1;
+    // width: 2em;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes PreMenuAnimationWidth {
+  0% {
+    // opacity: 0;
+    width: 4em;
+    // transform: rotate(-960deg);
+  }
+  100% {
+    // opacity: 1;
+    width: 2em;
+    // transform: rotate(0deg);
+  }
+}
+
 #menu {
   // font-size: 5vw;
   display: flex;
@@ -83,28 +184,16 @@
     transform: rotate(0deg);
   }
 }
+
 @keyframes MenuAnimationRotate {
   0% {
-    transform: scale(0.2) rotate(-300deg);
+    transform: scale(0.5) rotate(-300deg);
   }
   90% {
     transform: scale(0.9) rotate(0deg);
   }
   100% {
     transform: scale(1) rotate(0deg);
-  }
-}
-
-@keyframes MenuAnimationScale {
-  0%,
-  40%,
-  80% {
-    transform: scale(0.2);
-  }
-  100%,
-  20%,
-  60% {
-    transform: scale(1);
   }
 }
 
