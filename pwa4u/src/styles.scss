@@ -1,3 +1,91 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+// @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+// @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+
+/* CSS BROWSER RESET */
+
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+input,
+textarea,
+label,
+blockquote,
+table,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  font-family: Roboto, Verdana, Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  line-height: 1.4;
+}
+a,
+span {
+  background-repeat: no-repeat;
+  outline: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset,
+img,
+abbr,
+acronym {
+  border: none;
+  text-decoration: none;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+caption,
+th {
+  text-align: left;
+  font-weight: normal;
+}
+
+q:before,
+q:after {
+  content: '';
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+:root {
+  --main-primary-color: #86078b;
+  --main-UX-color: #0083db;
+  --main-FE-color: #00b5db;
+  --main-SL-color: #f87400;
+  --main-BE-color: #f84400;
+}

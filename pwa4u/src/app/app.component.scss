@@ -1,0 +1,95 @@
+#menu {
+  font-size: 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  .container {
+    display: flex;
+    width: 20em;
+    height: 20em;
+    flex-wrap: wrap;
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      color: white;
+      span {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+#UX-menu {
+  width: 10em;
+  height: 10em;
+  background-color: var(--main-UX-color);
+  z-index: 4;
+  transform-origin: 100% 100%;
+  animation: UXMenuAnimation 190ms 1 0s linear;
+}
+
+#FE-menu {
+  width: 10em;
+  height: 10em;
+  z-index: 3;
+  background-color: var(--main-FE-color);
+  transform-origin: 0% 100%;
+  animation: FEMenuAnimation 290ms 1 0s linear;
+}
+
+#BE-menu {
+  width: 10em;
+  height: 10em;
+  z-index: 2;
+  background-color: var(--main-BE-color);
+  transform-origin: 0% 0%;
+  animation: BEMenuAnimation 390ms 1 0s linear;
+}
+
+#SL-menu {
+  width: 10em;
+  height: 10em;
+  z-index: 1;
+  background-color: var(--main-SL-color);
+  transform-origin: 100% 0%;
+  animation: SLMenuAnimation 490ms 1 0s linear;
+}
+
+@keyframes UXMenuAnimation {
+  0% {
+    transform: rotate(-90deg) scale(0.2);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes FEMenuAnimation {
+  0% {
+    transform: rotate(-180deg) scale(0.2);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes BEMenuAnimation {
+  0% {
+    transform: rotate(-270deg) scale(0.2);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes SLMenuAnimation {
+  0% {
+    transform: rotate(-360deg) scale(0.2);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
