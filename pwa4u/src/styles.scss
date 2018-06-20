@@ -106,12 +106,26 @@ button {
 /* color variables */
 
 :root {
-  --main-primary-color: #86078b;
   --light-primary-color: #f3eef3;
+  --main-primary-color: #86078b;
+  --darker-primary-color: #6e0472;
+  --dark-primary-color: #5f0263;
+
   --main-UX-color: #0083db;
+  --darker-UX-color: #005c99;
+  --dark-UX-color: #004c80;
+
   --main-FE-color: #00b5db;
+  --darker-FE-color: #007e99;
+  --dark-FE-color: #006980;
+
   --main-SL-color: #f87400;
+  --darker-SL-color: #e26a00;
+  --dark-SL-color: #cb6001;
+
   --main-BE-color: #f84400;
+  --darker-BE-color: #d93c01;
+  --dark-BE-color: #be3704;
 }
 
 /* main background */
