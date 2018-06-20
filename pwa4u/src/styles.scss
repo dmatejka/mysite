@@ -99,6 +99,11 @@ button {
   font-size: 14px;
 }
 
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
 /* color variables */
 
 :root {
@@ -110,4 +115,23 @@ button {
   --main-BE-color: #f84400;
 }
 
-/* LOADING ANIMATION */
+/* main background */
+.home-route {
+  background-color: var(--light-primary-color);
+}
+
+.UX-route {
+  background-color: var(--main-UX-color);
+}
+
+.FE-route {
+  background-color: var(--main-FE-color);
+}
+
+.BE-route {
+  background-color: var(--main-BE-color);
+}
+
+.SL-route {
+  background-color: var(--main-SL-color);
+}

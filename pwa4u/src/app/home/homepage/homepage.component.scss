@@ -28,6 +28,29 @@
         opacity: 0.5;
       }
     }
+    .UX {
+      background-color: #0083db;
+      z-index: 4;
+      /* transform-origin: 2em 2em; */
+    }
+
+    .FE {
+      z-index: 3;
+      background-color: #00b5db;
+      /* transform-origin: -2em 2em; */
+    }
+
+    .BE {
+      z-index: 2;
+      background-color: #f84400;
+      /* transform-origin: 2em -2em; */
+    }
+
+    .SL {
+      z-index: 1;
+      background-color: #f87400;
+      /* transform-origin: -2em -2em; */
+    }
   }
 }
 

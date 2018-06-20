@@ -1,4 +1,3 @@
-import { Component, OnInit } from '@angular/core';
 import {
   animate,
   group,
@@ -8,8 +7,9 @@ import {
   style,
   transition,
   trigger,
-} from '../../node_modules/@angular/animations';
-import { Router, RouterOutlet } from '../../node_modules/@angular/router';
+} from '@angular/animations';
+import { Component, OnInit, Renderer2 } from '@angular/core';
+import { NavigationStart, Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'x5-root',
@@ -116,6 +116,7 @@ import { Router, RouterOutlet } from '../../node_modules/@angular/router';
       transition('*=>UX', [
         group([
           query('.container div', [
+            style({ 'border-width': 0 }),
             animate('200ms', style({ opacity: 0 })),
             style({ opacity: 0 }),
           ]),
@@ -178,6 +179,7 @@ import { Router, RouterOutlet } from '../../node_modules/@angular/router';
       transition('home=>FE', [
         group([
           query('.container div', [
+            style({ 'border-width': 0 }),
             animate('200ms', style({ opacity: 0 })),
             style({ opacity: 0 }),
           ]),
@@ -240,6 +242,7 @@ import { Router, RouterOutlet } from '../../node_modules/@angular/router';
       transition('home=>SL', [
         group([
           query('.container div', [
+            style({ 'border-width': 0 }),
             animate('200ms', style({ opacity: 0 })),
             style({ opacity: 0 }),
           ]),
@@ -302,6 +305,7 @@ import { Router, RouterOutlet } from '../../node_modules/@angular/router';
       transition('home=>BE', [
         group([
           query('.container div', [
+            style({ 'border-width': 0 }),
             animate('200ms', style({ opacity: 0 })),
             style({ opacity: 0 }),
           ]),
@@ -364,7 +368,22 @@ import { Router, RouterOutlet } from '../../node_modules/@angular/router';
   ],
 })
 export class AppComponent implements OnInit {
-  constructor(private _router: Router) {}
+  previousUrl: string;
+
+  constructor(private renderer: Renderer2, private router: Router) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationStart) {
+        if (this.previousUrl) {
+          this.renderer.removeClass(document.body, `${this.previousUrl}-route`);
+        }
+        const currentUrlSlug = event.url.slice(1);
+        if (currentUrlSlug) {
+          this.renderer.addClass(document.body, `${currentUrlSlug}-route`);
+        }
+        this.previousUrl = currentUrlSlug;
+      }
+    });
+  }
 
   ngOnInit() {}
 
