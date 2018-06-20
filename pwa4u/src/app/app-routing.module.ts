@@ -17,6 +17,15 @@ const routes: Routes = [
   //    { path: 'page5', component: RoutePage5Component, data: { animation: '5' } }
   //  ]
   // },
+  {
+    path: 'home',
+    loadChildren: './home/home.module#HomeModule',
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({

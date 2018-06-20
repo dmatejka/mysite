@@ -1,0 +1,19 @@
+<div class="menu" id="menu" [@menuloading]=menustate>
+  <div class="container" *ngIf="menustate=='loaded'">
+    <div class="UX" id="UX-menu" (click)="onMenuClick('UX')">
+      <span>UX/UI</span>
+    </div>
+    <div class="FE" id="FE-menu" (click)="onMenuClick('FE')">
+      <span>FrontEnd</span>
+    </div>
+    <div class="SL" id="SL-menu" (click)="onMenuClick('SL')">
+      <span>Serverless</span>
+    </div>
+    <div class="BE" id="BE-menu" (click)="onMenuClick('BE')">
+      <span>BeckEnd</span>
+    </div>
+  </div>
+  <div class="limit">
+    <div class="backgroudcircle"></div>
+  </div>
+</div>
