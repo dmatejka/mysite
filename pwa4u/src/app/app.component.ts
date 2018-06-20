@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   animate,
   group,
@@ -17,7 +17,7 @@ import { Router, RouterOutlet } from '../../node_modules/@angular/router';
   styleUrls: ['./app.component.scss'],
   animations: [
     trigger('menuloading', [
-      transition('*=>*', [
+      transition('*=>loaded', [
         group([
           query('.container', [
             style({
@@ -46,9 +46,9 @@ import { Router, RouterOutlet } from '../../node_modules/@angular/router';
         ]),
         query(
           '.container div span',
-          stagger('150ms', [
+          stagger('100ms', [
             animate(
-              '250ms',
+              '450ms',
               keyframes([
                 style({ opacity: 0, offset: 0.0 }),
                 style({ opacity: 0.6, offset: 0.1 }),
@@ -82,11 +82,216 @@ import { Router, RouterOutlet } from '../../node_modules/@angular/router';
           ])
         ),
       ]),
+
+      transition('*=>UX', [
+        group([
+          query('.container div', [
+            animate('200ms', style({ opacity: 0 })),
+            style({ opacity: 0 }),
+          ]),
+          query('.UX', [
+            style({
+              opacity: 1,
+              'transform-origin': '50% 50%',
+            }),
+            group([
+              animate(
+                '250ms ease-out',
+                style({
+                  transform: ' scale(.7)',
+                })
+              ),
+              animate(
+                '400ms',
+                style({
+                  opacity: 0,
+                })
+              ),
+            ]),
+          ]),
+
+          query('.backgroudcircle ', [
+            style({
+              position: 'absolute',
+              'z-index': 1000,
+              opacity: 0,
+              'border-radius': '50%',
+              'background-color': 'var(--main-UX-color)',
+              width: '1em',
+              height: '1em',
+            }),
+            animate(
+              '650ms ease-out',
+              style({
+                transform: 'scale(500)',
+                opacity: 0.7,
+              })
+            ),
+          ]),
+        ]),
+        query('.container ', [style({ opacity: 0 })]),
+      ]),
+
+      transition('*=>FE', [
+        group([
+          query('.container div', [
+            animate('200ms', style({ opacity: 0 })),
+            style({ opacity: 0 }),
+          ]),
+          query('.FE', [
+            style({
+              opacity: 1,
+              'transform-origin': '50% 50%',
+            }),
+            group([
+              animate(
+                '250ms ease-out',
+                style({
+                  transform: ' scale(.7)',
+                })
+              ),
+              animate(
+                '400ms',
+                style({
+                  opacity: 0,
+                })
+              ),
+            ]),
+          ]),
+
+          query('.backgroudcircle ', [
+            style({
+              position: 'absolute',
+              'z-index': 1000,
+              opacity: 0,
+              'border-radius': '50%',
+              'background-color': 'var(--main-FE-color)',
+              width: '1em',
+              height: '1em',
+            }),
+            animate(
+              '650ms ease-out',
+              style({
+                transform: 'scale(500)',
+                opacity: 0.7,
+              })
+            ),
+          ]),
+        ]),
+        query('.container ', [style({ opacity: 0 })]),
+      ]),
+
+      transition('*=>SL', [
+        group([
+          query('.container div', [
+            animate('200ms', style({ opacity: 0 })),
+            style({ opacity: 0 }),
+          ]),
+          query('.SL', [
+            style({
+              opacity: 1,
+              'transform-origin': '50% 50%',
+            }),
+            group([
+              animate(
+                '250ms ease-out',
+                style({
+                  transform: ' scale(.7)',
+                })
+              ),
+              animate(
+                '400ms',
+                style({
+                  opacity: 0,
+                })
+              ),
+            ]),
+          ]),
+
+          query('.backgroudcircle ', [
+            style({
+              position: 'absolute',
+              'z-index': 1000,
+              opacity: 0,
+              'border-radius': '50%',
+              'background-color': 'var(--main-SL-color)',
+              width: '1em',
+              height: '1em',
+            }),
+            animate(
+              '650ms ease-out',
+              style({
+                transform: 'scale(500)',
+                opacity: 0.7,
+              })
+            ),
+          ]),
+        ]),
+        query('.container ', [style({ opacity: 0 })]),
+      ]),
+
+      transition('*=>BE', [
+        group([
+          query('.container div', [
+            animate('200ms', style({ opacity: 0 })),
+            style({ opacity: 0 }),
+          ]),
+          query('.BE', [
+            style({
+              opacity: 1,
+              'transform-origin': '50% 50%',
+            }),
+            group([
+              animate(
+                '250ms ease-out',
+                style({
+                  transform: ' scale(.7)',
+                })
+              ),
+              animate(
+                '400ms',
+                style({
+                  opacity: 0,
+                })
+              ),
+            ]),
+          ]),
+
+          query('.backgroudcircle ', [
+            style({
+              position: 'absolute',
+              'z-index': 1000,
+              opacity: 0,
+              'border-radius': '50%',
+              'background-color': 'var(--main-BE-color)',
+              width: '1em',
+              height: '1em',
+            }),
+            animate(
+              '650ms ease-out',
+              style({
+                transform: 'scale(500)',
+                opacity: 0.7,
+              })
+            ),
+          ]),
+        ]),
+        query('.container ', [style({ opacity: 0 })]),
+      ]),
     ]),
   ],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  menustate = 'notloaded';
   constructor(private _router: Router) {}
+
+  ngOnInit() {
+    this.menustate = 'loaded';
+  }
+
+  onMenuClick(item) {
+    this.menustate = item;
+  }
 
   prepareRouteAnimation(outlet: RouterOutlet) {
     return outlet.activatedRouteData['animation'] || '';
