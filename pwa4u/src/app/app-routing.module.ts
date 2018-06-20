@@ -20,11 +20,12 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: './home/home.module#HomeModule',
-    data: {animation:'home'}
+    data: { animation: 'home' },
   },
   {
     path: 'UX',
     loadChildren: './ux/ux.module#UXModule',
+    data: { animation: 'UX' },
   },
   {
     path: '',

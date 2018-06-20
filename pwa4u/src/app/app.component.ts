@@ -37,30 +37,41 @@ import { Router, RouterOutlet } from '../../node_modules/@angular/router';
 
       transition('*=>home', [
         group([
-          query('.container', [
-            style({
-              transform: 'scale(.1) rotate(-360deg)',
-            }),
-            animate(
-              '450ms',
-              keyframes([
-                style({ transform: 'scale(0.1) rotate(-360deg)', offset: 0 }),
-                style({ transform: 'scale(0.5) rotate(-45deg)', offset: 0.75 }),
-                style({ transform: 'scale(1) rotate(0deg)', offset: 1.0 }),
-              ])
-            ),
-          ]),
-          query('.container div', [
-            style({
-              'border-radius': '33%',
-            }),
-            animate(
-              '550ms',
+          query(
+            '.container',
+            [
               style({
-                'border-radius': '0%',
-              })
-            ),
-          ]),
+                transform: 'scale(.1) rotate(-360deg)',
+              }),
+              animate(
+                '450ms',
+                keyframes([
+                  style({ transform: 'scale(0.1) rotate(-360deg)', offset: 0 }),
+                  style({
+                    transform: 'scale(0.5) rotate(-45deg)',
+                    offset: 0.75,
+                  }),
+                  style({ transform: 'scale(1) rotate(0deg)', offset: 1.0 }),
+                ])
+              ),
+            ],
+            { optional: true }
+          ),
+          query(
+            '.container div',
+            [
+              style({
+                'border-radius': '33%',
+              }),
+              animate(
+                '550ms',
+                style({
+                  'border-radius': '0%',
+                })
+              ),
+            ],
+            { optional: true }
+          ),
         ]),
         query(
           '.container div span',
@@ -97,8 +108,257 @@ import { Router, RouterOutlet } from '../../node_modules/@angular/router';
                 style({ opacity: 0.5, offset: 1 }),
               ])
             ),
-          ])
+          ]),
+          { optional: true }
         ),
+      ]),
+
+      transition('*=>UX', [
+        group([
+          query('.container div', [
+            animate('200ms', style({ opacity: 0 })),
+            style({ opacity: 0 }),
+          ]),
+          query('.UX', [
+            style({
+              opacity: 1,
+              'transform-origin': '50% 50%',
+            }),
+            group([
+              animate(
+                '250ms ease-out',
+                style({
+                  transform: ' scale(.7)',
+                })
+              ),
+              animate(
+                '400ms',
+                style({
+                  opacity: 0,
+                })
+              ),
+            ]),
+          ]),
+
+          query('.limit ', [
+            style({
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              overflow: 'hidden',
+              'z-index': 1000,
+              width: '100vw',
+              height: '100vh',
+            }),
+          ]),
+
+          query('.backgroudcircle ', [
+            style({
+              position: 'relative',
+              'transform-origin': '50 50',
+              left: '50vw',
+              top: '50vh',
+              opacity: 0,
+              'border-radius': '50%',
+              'background-color': 'var(--main-UX-color)',
+              width: '1em',
+              height: '1em',
+            }),
+            animate(
+              '750ms ease-out',
+              style({
+                transform: 'scale(250)',
+                opacity: 0.7,
+              })
+            ),
+          ]),
+        ]),
+      ]),
+
+      transition('home=>FE', [
+        group([
+          query('.container div', [
+            animate('200ms', style({ opacity: 0 })),
+            style({ opacity: 0 }),
+          ]),
+          query('.FE', [
+            style({
+              opacity: 1,
+              'transform-origin': '50% 50%',
+            }),
+            group([
+              animate(
+                '250ms ease-out',
+                style({
+                  transform: ' scale(.7)',
+                })
+              ),
+              animate(
+                '400ms',
+                style({
+                  opacity: 0,
+                })
+              ),
+            ]),
+          ]),
+
+          query('.limit ', [
+            style({
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              overflow: 'hidden',
+              'z-index': 1000,
+              width: '100vw',
+              height: '100vh',
+            }),
+          ]),
+
+          query('.backgroudcircle ', [
+            style({
+              position: 'relative',
+              'transform-origin': '50 50',
+              left: '50vw',
+              top: '50vh',
+              opacity: 0,
+              'border-radius': '50%',
+              'background-color': 'var(--main-FE-color)',
+              width: '1em',
+              height: '1em',
+            }),
+            animate(
+              '750ms ease-out',
+              style({
+                transform: 'scale(250)',
+                opacity: 0.7,
+              })
+            ),
+          ]),
+        ]),
+      ]),
+
+      transition('home=>SL', [
+        group([
+          query('.container div', [
+            animate('200ms', style({ opacity: 0 })),
+            style({ opacity: 0 }),
+          ]),
+          query('.SL', [
+            style({
+              opacity: 1,
+              'transform-origin': '50% 50%',
+            }),
+            group([
+              animate(
+                '250ms ease-out',
+                style({
+                  transform: ' scale(.7)',
+                })
+              ),
+              animate(
+                '400ms',
+                style({
+                  opacity: 0,
+                })
+              ),
+            ]),
+          ]),
+
+          query('.limit ', [
+            style({
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              overflow: 'hidden',
+              'z-index': 1000,
+              width: '100vw',
+              height: '100vh',
+            }),
+          ]),
+
+          query('.backgroudcircle ', [
+            style({
+              position: 'relative',
+              'transform-origin': '50 50',
+              left: '50vw',
+              top: '50vh',
+              opacity: 0,
+              'border-radius': '50%',
+              'background-color': 'var(--main-SL-color)',
+              width: '1em',
+              height: '1em',
+            }),
+            animate(
+              '750ms ease-out',
+              style({
+                transform: 'scale(250)',
+                opacity: 0.7,
+              })
+            ),
+          ]),
+        ]),
+      ]),
+
+      transition('home=>BE', [
+        group([
+          query('.container div', [
+            animate('200ms', style({ opacity: 0 })),
+            style({ opacity: 0 }),
+          ]),
+          query('.BE', [
+            style({
+              opacity: 1,
+              'transform-origin': '50% 50%',
+            }),
+            group([
+              animate(
+                '250ms ease-out',
+                style({
+                  transform: ' scale(.7)',
+                })
+              ),
+              animate(
+                '400ms',
+                style({
+                  opacity: 0,
+                })
+              ),
+            ]),
+          ]),
+
+          query('.limit ', [
+            style({
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              overflow: 'hidden',
+              'z-index': 1000,
+              width: '100vw',
+              height: '100vh',
+            }),
+          ]),
+
+          query('.backgroudcircle ', [
+            style({
+              position: 'relative',
+              'transform-origin': '50 50',
+              left: '50vw',
+              top: '50vh',
+              opacity: 0,
+              'border-radius': '50%',
+              'background-color': 'var(--main-BE-color)',
+              width: '1em',
+              height: '1em',
+            }),
+            animate(
+              '750ms ease-out',
+              style({
+                transform: 'scale(250)',
+                opacity: 0.7,
+              })
+            ),
+          ]),
+        ]),
       ]),
     ]),
   ],

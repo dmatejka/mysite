@@ -2,8 +2,8 @@
   <img src="/assets/mobile-and-desktop1.svg">
 </div>
 
-<div class="menu" id="menu" [@menuloading]=menustate (@menuloading.done)="handleDone( $event )" (@menuloading.start)="handleStart( $event )">
-  <div class=" container " *ngIf="menustate=='loaded' ">
+<div class="menu" id="menu">
+  <div class=" container ">
     <div class="UX " id="UX-menu " (click)="onMenuClick( 'UX') ">
       <span>UX/UI</span>
     </div>
