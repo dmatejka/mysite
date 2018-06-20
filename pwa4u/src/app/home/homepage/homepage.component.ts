@@ -343,5 +343,6 @@ export class HomepageComponent implements OnInit {
 
   onMenuClick(item) {
     this.menustate = item;
+    this._router.navigate(['ux']);
   }
 }
