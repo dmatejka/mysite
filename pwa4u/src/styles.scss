@@ -86,7 +86,6 @@ select {
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
   box-sizing: border-box;
-  background-color: var(--light-primary-color);
 }
 *,
 *:before,
@@ -99,10 +98,10 @@ button {
   font-size: 14px;
 }
 
-body {
-  min-width: 100vw;
-  min-height: 100vh;
-}
+// body {
+//   min-width: 100vw;
+//   min-height: 100vh;
+// }
 
 /* color variables */
 
