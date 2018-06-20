@@ -20,9 +20,10 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: './home/home.module#HomeModule',
+    data: {animation:'home'}
   },
   {
-    path: 'ux',
+    path: 'UX',
     loadChildren: './ux/ux.module#UXModule',
   },
   {
