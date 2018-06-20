@@ -9,6 +9,7 @@ import {
   trigger,
 } from '@angular/animations';
 import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 import { NavigationStart, Router, RouterOutlet } from '@angular/router';
 
 @Component({
@@ -370,9 +371,14 @@ import { NavigationStart, Router, RouterOutlet } from '@angular/router';
 export class AppComponent implements OnInit {
   previousUrl: string;
 
-  constructor(private renderer: Renderer2, private router: Router) {
+  constructor(
+    private renderer: Renderer2,
+    private router: Router,
+    private meta: Meta
+  ) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
+        // change <body> CLASS
         if (this.previousUrl) {
           this.renderer.removeClass(document.body, `${this.previousUrl}-route`);
         }
@@ -381,6 +387,30 @@ export class AppComponent implements OnInit {
           this.renderer.addClass(document.body, `${currentUrlSlug}-route`);
         }
         this.previousUrl = currentUrlSlug;
+
+        // change HTML META TAG
+        switch (currentUrlSlug) {
+          case 'UX':
+            console.log('currentUrlSlug', currentUrlSlug);
+            this.meta.updateTag({ name: 'theme-color', content: '#0083db' });
+            break;
+          case 'FE':
+            console.log('currentUrlSlug', currentUrlSlug);
+            this.meta.updateTag({ name: 'theme-color', content: '#00b5db' });
+            break;
+          case 'BE':
+            console.log('currentUrlSlug', currentUrlSlug);
+            this.meta.updateTag({ name: 'theme-color', content: '#f84400' });
+            break;
+          case 'SL':
+            this.meta.updateTag({ name: 'theme-color', content: '#f87400' });
+            console.log('currentUrlSlug', currentUrlSlug);
+            break;
+          default:
+            console.log('currentUrlSlug', currentUrlSlug);
+            this.meta.updateTag({ name: 'theme-color', content: '#86078b' });
+            break;
+        }
       }
     });
   }
