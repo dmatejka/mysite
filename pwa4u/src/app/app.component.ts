@@ -110,10 +110,24 @@ import { Router, RouterOutlet } from '../../node_modules/@angular/router';
             ]),
           ]),
 
-          query('.backgroudcircle ', [
+          query('.limit ', [
             style({
               position: 'absolute',
+              top: 0,
+              left: 0,
+              overflow: 'hidden',
               'z-index': 1000,
+              width: '100vw',
+              height: '100vh',
+            }),
+          ]),
+
+          query('.backgroudcircle ', [
+            style({
+              position: 'relative',
+              'transform-origin': '50 50',
+              left: '50vw',
+              top: '50vh',
               opacity: 0,
               'border-radius': '50%',
               'background-color': 'var(--main-UX-color)',
@@ -121,15 +135,14 @@ import { Router, RouterOutlet } from '../../node_modules/@angular/router';
               height: '1em',
             }),
             animate(
-              '650ms ease-out',
+              '750ms ease-out',
               style({
-                transform: 'scale(500)',
+                transform: 'scale(250)',
                 opacity: 0.7,
               })
             ),
           ]),
         ]),
-        query('.container ', [style({ opacity: 0 })]),
       ]),
 
       transition('*=>FE', [
@@ -159,10 +172,24 @@ import { Router, RouterOutlet } from '../../node_modules/@angular/router';
             ]),
           ]),
 
-          query('.backgroudcircle ', [
+          query('.limit ', [
             style({
               position: 'absolute',
+              top: 0,
+              left: 0,
+              overflow: 'hidden',
               'z-index': 1000,
+              width: '100vw',
+              height: '100vh',
+            }),
+          ]),
+
+          query('.backgroudcircle ', [
+            style({
+              position: 'relative',
+              'transform-origin': '50 50',
+              left: '50vw',
+              top: '50vh',
               opacity: 0,
               'border-radius': '50%',
               'background-color': 'var(--main-FE-color)',
@@ -170,15 +197,14 @@ import { Router, RouterOutlet } from '../../node_modules/@angular/router';
               height: '1em',
             }),
             animate(
-              '650ms ease-out',
+              '750ms ease-out',
               style({
-                transform: 'scale(500)',
+                transform: 'scale(250)',
                 opacity: 0.7,
               })
             ),
           ]),
         ]),
-        query('.container ', [style({ opacity: 0 })]),
       ]),
 
       transition('*=>SL', [
@@ -208,10 +234,24 @@ import { Router, RouterOutlet } from '../../node_modules/@angular/router';
             ]),
           ]),
 
-          query('.backgroudcircle ', [
+          query('.limit ', [
             style({
               position: 'absolute',
+              top: 0,
+              left: 0,
+              overflow: 'hidden',
               'z-index': 1000,
+              width: '100vw',
+              height: '100vh',
+            }),
+          ]),
+
+          query('.backgroudcircle ', [
+            style({
+              position: 'relative',
+              'transform-origin': '50 50',
+              left: '50vw',
+              top: '50vh',
               opacity: 0,
               'border-radius': '50%',
               'background-color': 'var(--main-SL-color)',
@@ -219,15 +259,14 @@ import { Router, RouterOutlet } from '../../node_modules/@angular/router';
               height: '1em',
             }),
             animate(
-              '650ms ease-out',
+              '750ms ease-out',
               style({
-                transform: 'scale(500)',
+                transform: 'scale(250)',
                 opacity: 0.7,
               })
             ),
           ]),
         ]),
-        query('.container ', [style({ opacity: 0 })]),
       ]),
 
       transition('*=>BE', [
@@ -257,10 +296,24 @@ import { Router, RouterOutlet } from '../../node_modules/@angular/router';
             ]),
           ]),
 
-          query('.backgroudcircle ', [
+          query('.limit ', [
             style({
               position: 'absolute',
+              top: 0,
+              left: 0,
+              overflow: 'hidden',
               'z-index': 1000,
+              width: '100vw',
+              height: '100vh',
+            }),
+          ]),
+
+          query('.backgroudcircle ', [
+            style({
+              position: 'relative',
+              'transform-origin': '50 50',
+              left: '50vw',
+              top: '50vh',
               opacity: 0,
               'border-radius': '50%',
               'background-color': 'var(--main-BE-color)',
@@ -268,15 +321,14 @@ import { Router, RouterOutlet } from '../../node_modules/@angular/router';
               height: '1em',
             }),
             animate(
-              '650ms ease-out',
+              '750ms ease-out',
               style({
-                transform: 'scale(500)',
+                transform: 'scale(250)',
                 opacity: 0.7,
               })
             ),
           ]),
         ]),
-        query('.container ', [style({ opacity: 0 })]),
       ]),
     ]),
   ],
