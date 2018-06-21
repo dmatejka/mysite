@@ -6,7 +6,6 @@ a {
   color: whitesmoke;
   text-decoration: none;
   .pointer {
-    // opacity: 0;
     height: 2px;
     width: calc(100% + 2em);
     margin-left: -1em;
@@ -16,9 +15,11 @@ a {
     background-color: #ffff8d;
     transform: translateX(00%);
   }
-  &.active .pointer {
-    opacity: 1;
-    background-color: #ffff8d;
+  &.activated {
+    color: white;
+    font-weight: 500;
+    // opacity: 1;
+    // background-color: #ffff8d;
   }
 }
 

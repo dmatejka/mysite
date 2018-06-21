@@ -17,6 +17,7 @@ import { Component, Input, OnInit } from '@angular/core';
         'DOWN',
         style({
           transform: 'translateX(-100%)',
+          opacity: 1,
         })
       ),
 
@@ -24,6 +25,7 @@ import { Component, Input, OnInit } from '@angular/core';
         'UP',
         style({
           transform: 'translateX(100%)',
+          opacity: 1,
         })
       ),
 
@@ -31,6 +33,7 @@ import { Component, Input, OnInit } from '@angular/core';
         'active',
         style({
           transform: 'translateX(0%)',
+          opacity: 1,
         })
       ),
 
@@ -70,14 +73,14 @@ import { Component, Input, OnInit } from '@angular/core';
 
       transition('active => DOWN', [
         style({
-          transform: 'translateX(0%)',
+          // transform: 'translateX(0%)',
         }),
         animate(250),
       ]),
 
       transition('active => UP', [
         style({
-          transform: 'translateX(0%)',
+          // transform: 'translateX(0%)',
         }),
         animate(250),
       ]),
