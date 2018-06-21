@@ -42,9 +42,9 @@ import { Component, Input, OnInit } from '@angular/core';
         })
       ),
 
-      transition('UP => DOWN', [animate(500)]),
+      transition('UP => DOWN', [animate(250)]),
 
-      transition('DOWN => UP', [animate(500)]),
+      transition('DOWN => UP', [animate(250)]),
 
       transition('NONE => DOWN', [
         style({
@@ -65,7 +65,7 @@ import { Component, Input, OnInit } from '@angular/core';
           transform: 'translateX(0%)',
           opacity: 0,
         }),
-        // animate(250),
+        animate(250),
       ]),
 
       transition('active => DOWN', [

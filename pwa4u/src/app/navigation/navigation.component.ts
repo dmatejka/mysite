@@ -41,7 +41,7 @@ export class NavigationComponent implements OnInit, OnChanges {
       );
 
       // emit every 1s
-      const timer$ = interval(250);
+      const timer$ = interval(125);
 
       const source$ = from(seq);
 
