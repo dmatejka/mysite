@@ -1,23 +1,27 @@
 /* HEADER */
 #header {
+  position: sticky;
+  z-index: 1500;
   background-color: var(--main-primary-color);
   color: var(--light-primary-color);
   height: 10vh;
+  width: 100%;
   min-height: 4em;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   opacity: 0;
   animation: HeaderAnimation 150ms 250ms ease-in-out forwards;
   .title {
-    text-align: center;
+    text-align: left;
+    margin-left: 5em;
     .action {
       font-size: 0.9rem;
       font-weight: 300;
     }
     .subject {
       font-size: 1.3em;
-      font-weight: 500;
+      font-weight: 400;
     }
   }
 }

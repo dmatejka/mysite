@@ -10,7 +10,14 @@ import {
 } from '@angular/animations';
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
-import { NavigationStart, Router, RouterOutlet } from '@angular/router';
+import {
+  ActivatedRoute,
+  NavigationEnd,
+  NavigationStart,
+  Router,
+  RouterOutlet,
+} from '@angular/router';
+import { filter, map, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'x5-root',
@@ -114,7 +121,7 @@ import { NavigationStart, Router, RouterOutlet } from '@angular/router';
         ),
       ]),
 
-      transition('*=>UX', [
+      transition('home=>UX', [
         group([
           query('.container div', [
             style({ 'border-width': 0 }),
@@ -148,7 +155,7 @@ import { NavigationStart, Router, RouterOutlet } from '@angular/router';
               top: 0,
               left: 0,
               overflow: 'hidden',
-              'z-index': 1000,
+              'z-index': 5,
               width: '100vw',
               height: '100vh',
             }),
@@ -162,7 +169,7 @@ import { NavigationStart, Router, RouterOutlet } from '@angular/router';
               top: '50vh',
               opacity: 0,
               'border-radius': '50%',
-              'background-color': 'var(--main-UX-color)',
+              'background-color': 'var(--darker-UX-color)',
               width: '1em',
               height: '1em',
             }),
@@ -370,12 +377,43 @@ import { NavigationStart, Router, RouterOutlet } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   previousUrl: string;
+  previousPosition = 1;
+  currentPosition = 1;
+  positionDirection: any;
 
   constructor(
     private renderer: Renderer2,
     private router: Router,
+    private activeroute: ActivatedRoute,
     private meta: Meta
   ) {
+    // const positionDir = activeroute.data.pipe(
+    //   tap(cur => console.log('RX-cur - incomming', cur)),
+    //   map(d => d.position),
+    //   tap(() => (this.previousPosition = this.currentPosition)),
+    //   map(cur => this.previousPosition > cur),
+    //   tap(cur => console.log('RX-cur', cur))
+    // );
+
+    this.router.events
+      .pipe(
+        filter(event => event instanceof NavigationEnd),
+        map(r => this.activeroute.firstChild.data['value']),
+        tap(() => (this.previousPosition = this.currentPosition)),
+        map(data => data['position']),
+        tap(cur => (this.currentPosition = cur)),
+        map(cur => ({ from: this.previousPosition, to: cur }))
+        // take(1),
+      )
+      .subscribe(data => {
+        this.positionDirection = data;
+        // console.log('DATA', data);
+        // console.log('this.currentPosition', this.currentPosition);
+        // console.log('this.previousPosition', this.previousPosition);
+      });
+
+    // positionDir.subscribe(data => console.log('DATA', data));
+
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
         // change <body> CLASS
@@ -426,11 +464,27 @@ export class AppComponent implements OnInit {
             });
             break;
         }
+
+        // if (this.activeroute.snapshot.data) {
+        //   console.log(
+        //     'RX-cur - this.activeroute.data',
+        //     this.activeroute.snapshot.data
+        //   );
+        // }
       }
     });
   }
 
   ngOnInit() {}
+
+  // positionDirection(outlet: RouterOutlet) {
+  //   this.previousPosition = this.currentPosition;
+  //   this.currentPosition = outlet.activatedRouteData['position'] || 0;
+  //   if (this.previousPosition - this.currentPosition !== 0) {
+  //     return this.previousPosition - this.currentPosition > 0 ? 'DOWN' : 'UP';
+  //   }
+  //   return 'stay';
+  // }
 
   prepareRouteAnimation(outlet: RouterOutlet) {
     return outlet.activatedRouteData['animation'] || 'basic';
