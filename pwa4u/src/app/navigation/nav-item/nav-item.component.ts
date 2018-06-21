@@ -33,6 +33,19 @@ import { Component, Input, OnInit } from '@angular/core';
           transform: 'translateX(0%)',
         })
       ),
+
+      state(
+        'NONE',
+        style({
+          transform: 'translateX(0%)',
+          opacity: 0,
+        })
+      ),
+
+      transition('UP => DOWN', [animate(500)]),
+
+      transition('DOWN => UP', [animate(500)]),
+
       transition('NONE => DOWN', [
         style({
           transform: 'translateX(100%)',

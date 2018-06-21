@@ -58,36 +58,22 @@ export class NavigationComponent implements OnInit, OnChanges {
           this.pointerState4,
           this.pointerState5
         );
-        this.pointerState1 =
-          data === 1
-            ? Number(this.direction.to) === 1
-              ? 'active'
-              : dir
-            : 'NONE';
-        this.pointerState2 =
-          data === 2
-            ? Number(this.direction.to) === 2
-              ? 'active'
-              : dir
-            : 'NONE';
-        this.pointerState3 =
-          data === 3
-            ? Number(this.direction.to) === 3
-              ? 'active'
-              : dir
-            : 'NONE';
-        this.pointerState4 =
-          data === 4
-            ? Number(this.direction.to) === 4
-              ? 'active'
-              : dir
-            : 'NONE';
-        this.pointerState5 =
-          data === 5
-            ? Number(this.direction.to) === 5
-              ? 'active'
-              : dir
-            : 'NONE';
+
+        if (data === 1) {
+          this.pointerState1 = this.direction.to === 1 ? 'active' : dir;
+        }
+        if (data === 2) {
+          this.pointerState2 = this.direction.to === 2 ? 'active' : dir;
+        }
+        if (data === 3) {
+          this.pointerState3 = this.direction.to === 3 ? 'active' : dir;
+        }
+        if (data === 4) {
+          this.pointerState4 = this.direction.to === 4 ? 'active' : dir;
+        }
+        if (data === 5) {
+          this.pointerState5 = this.direction.to === 5 ? 'active' : dir;
+        }
 
         console.log(
           'to:',

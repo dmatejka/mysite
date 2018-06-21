@@ -13,12 +13,12 @@ a {
     margin-top: 10px;
     display: block;
     opacity: 1;
-    background-color: #ffff8d;
-    transform: translateX(-100%);
+    background-color: whitesmoke;
+    transform: translateX(00%);
   }
   &.active .pointer {
-    // opacity: 1;
-    // background-color: #ffff8d;
+    opacity: 1;
+    background-color: #ffff8d;
   }
 }
 
