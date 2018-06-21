@@ -46,14 +46,7 @@ export class AppComponent implements OnInit {
     private activeroute: ActivatedRoute,
     private meta: Meta
   ) {
-    // const positionDir = activeroute.data.pipe(
-    //   tap(cur => console.log('RX-cur - incomming', cur)),
-    //   map(d => d.position),
-    //   tap(() => (this.previousPosition = this.currentPosition)),
-    //   map(cur => this.previousPosition > cur),
-    //   tap(cur => console.log('RX-cur', cur))
-    // );
-
+    // GET Navigation Position clicked from ROUTER DATA
     this.router.events
       .pipe(
         filter(event => event instanceof NavigationEnd),
@@ -62,54 +55,52 @@ export class AppComponent implements OnInit {
         map(data => data['position']),
         tap(cur => (this.currentPosition = cur)),
         map(cur => ({ from: this.previousPosition, to: cur }))
-        // take(1),
       )
       .subscribe(data => {
         this.positionDirection = data;
-        // console.log('DATA', data);
-        // console.log('this.currentPosition', this.currentPosition);
-        // console.log('this.previousPosition', this.previousPosition);
       });
 
-    // positionDir.subscribe(data => console.log('DATA', data));
-
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationStart) {
-        // change <body> CLASS
+    this.router.events
+      .pipe(
+        filter(event => event instanceof NavigationStart),
+        map(r => r['url'].slice(1)),
+        tap(d => console.log('ROUTE DATA:', d))
+      )
+      .subscribe(urlname => {
+        // change <body> CLASS => change body color
         if (this.previousUrl) {
           this.renderer.removeClass(document.body, `${this.previousUrl}-route`);
         }
-        const currentUrlSlug = event.url.slice(1);
-        if (currentUrlSlug) {
-          this.renderer.addClass(document.body, `${currentUrlSlug}-route`);
+        if (urlname) {
+          this.renderer.addClass(document.body, `${urlname}-route`);
         }
-        this.previousUrl = currentUrlSlug;
+        this.previousUrl = urlname;
 
         // change HTML META TAG
-        switch (currentUrlSlug) {
+        switch (urlname) {
           case 'UX':
-            this.meta.updateTag({ name: 'theme-color', content: '#0083db' });
+            this.meta.updateTag({ name: 'theme-color', content: '#004c80' });
             this.meta.updateTag({
               name: 'apple-mobile-web-app-status-bar-style',
               content: '#0083db',
             });
             break;
           case 'FE':
-            this.meta.updateTag({ name: 'theme-color', content: '#00b5db' });
+            this.meta.updateTag({ name: 'theme-color', content: '#006980' });
             this.meta.updateTag({
               name: 'apple-mobile-web-app-status-bar-style',
               content: '#00b5db',
             });
             break;
           case 'BE':
-            this.meta.updateTag({ name: 'theme-color', content: '#f84400' });
+            this.meta.updateTag({ name: 'theme-color', content: '#be3704' });
             this.meta.updateTag({
               name: 'apple-mobile-web-app-status-bar-style',
               content: '#f84400',
             });
             break;
           case 'SL':
-            this.meta.updateTag({ name: 'theme-color', content: '#f87400' });
+            this.meta.updateTag({ name: 'theme-color', content: '#cb6001' });
             this.meta.updateTag({
               name: 'apple-mobile-web-app-status-bar-style',
               content: '#f87400',
@@ -123,27 +114,10 @@ export class AppComponent implements OnInit {
             });
             break;
         }
-
-        // if (this.activeroute.snapshot.data) {
-        //   console.log(
-        //     'RX-cur - this.activeroute.data',
-        //     this.activeroute.snapshot.data
-        //   );
-        // }
-      }
-    });
+      });
   }
 
   ngOnInit() {}
-
-  // positionDirection(outlet: RouterOutlet) {
-  //   this.previousPosition = this.currentPosition;
-  //   this.currentPosition = outlet.activatedRouteData['position'] || 0;
-  //   if (this.previousPosition - this.currentPosition !== 0) {
-  //     return this.previousPosition - this.currentPosition > 0 ? 'DOWN' : 'UP';
-  //   }
-  //   return 'stay';
-  // }
 
   prepareRouteAnimation(outlet: RouterOutlet) {
     return outlet.activatedRouteData['animation'] || 'basic';
