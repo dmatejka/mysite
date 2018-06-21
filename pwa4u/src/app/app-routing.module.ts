@@ -33,6 +33,16 @@ const routes: Routes = [
     data: { animation: 'FE', position: 3 },
   },
   {
+    path: 'SL',
+    loadChildren: './sl/sl.module#SLModule',
+    data: { animation: 'SL', position: 4 },
+  },
+  {
+    path: 'BE',
+    loadChildren: './be/be.module#BEModule',
+    data: { animation: 'BE', position: 5 },
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
