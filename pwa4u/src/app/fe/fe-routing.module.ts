@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { FepageComponent } from './fepage/fepage.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    component: FepageComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class FERoutingModule { }
+export class FERoutingModule {}

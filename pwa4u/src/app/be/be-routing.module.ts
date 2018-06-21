@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { BepageComponent } from './bepage/bepage.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    component: BepageComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class BERoutingModule { }
+export class BERoutingModule {}
