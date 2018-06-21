@@ -8,11 +8,11 @@ import { from, interval, zip } from 'rxjs';
 })
 export class NavigationComponent implements OnInit, OnChanges {
   activeNav: any;
-  pointerState1 = 'NONE';
-  pointerState2 = 'NONE';
-  pointerState3 = 'NONE';
-  pointerState4 = 'NONE';
-  pointerState5 = 'NONE';
+  pointerState1 = 'DOWN';
+  pointerState2 = 'DOWN';
+  pointerState3 = 'DOWN';
+  pointerState4 = 'DOWN';
+  pointerState5 = 'DOWN';
 
   @Input() direction = { from: 1, to: 1 };
 

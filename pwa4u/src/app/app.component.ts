@@ -10,11 +10,11 @@ import {
 } from '@angular/router';
 import { filter, map, tap } from 'rxjs/operators';
 import {
+  anyToBETransition,
+  anyToFETransition,
+  anyToSLTransition,
+  anyToUXTransition,
   basicTransition,
-  homeToBETransition,
-  homeToFETransition,
-  homeToSLTransition,
-  homeToUXTransition,
   homeTransition,
 } from './app-routing-animation';
 
@@ -27,10 +27,10 @@ import {
       basicTransition,
 
       homeTransition,
-      homeToUXTransition,
-      homeToFETransition,
-      homeToSLTransition,
-      homeToBETransition,
+      anyToUXTransition,
+      anyToFETransition,
+      anyToSLTransition,
+      anyToBETransition,
     ]),
   ],
 })

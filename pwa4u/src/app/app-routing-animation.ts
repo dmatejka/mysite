@@ -100,104 +100,118 @@ export const homeTransition = transition('*=>home', [
   ),
 ]);
 
-// HOME TO UX Transition
-export const homeToUXTransition = transition('home=>UX', [
+// ANY TO UX Transition
+export const anyToUXTransition = transition('*=>UX', [
+  // HOME TO UX Transition
   group([
     /* SUBTITLE animation */
-    query('#subtitle', [
-      animate('400ms', style({ opacity: 0 })),
-      style({ opacity: 0 }),
-    ]),
+    query(
+      '#subtitle',
+      [animate('400ms', style({ opacity: 0 })), style({ opacity: 0 })],
+      { optional: true }
+    ),
 
     /* BOXES animation */
-    query('.container div', [
-      animate('200ms', style({ opacity: 0 })),
-      style({ opacity: 0 }),
+    query(
+      '.container div',
+      [
+        animate('200ms', style({ opacity: 0, transform: 'scale(0)' })),
+        style({ opacity: 0 }),
+      ],
+      { optional: true }
+    ),
+
+    query(
+      '.UX ',
+      [
+        style({
+          opacity: 0.5,
+          'transform-origin': '50% 50%',
+          transform: 'scale(1)',
+        }),
+        group([
+          animate(
+            '1000ms ease-out',
+            style({
+              transform: ' scale(25)',
+              opacity: 0,
+            })
+          ),
+        ]),
+      ],
+      { optional: true }
+    ),
+
+    /* BACKGROIUND CIRCLE animation */
+    query('.limit ', [
+      style({
+        position: 'absolute',
+        opacity: 1,
+        width: '100vw',
+        height: '100vh',
+      }),
     ]),
 
-    query('.UX', [
+    query('.backgroudcircle ', [
       style({
-        opacity: 1,
+        opacity: 0.3,
         'background-color': 'var(--darker-UX-color)',
-        'transform-origin': '50% 50%',
-      }),
-      group([
-        animate(
-          '250ms ease-out',
-          style({
-            transform: ' scale(.7)',
-          })
-        ),
-        animate(
-          '400ms',
-          style({
-            opacity: 0,
-          })
-        ),
-      ]),
-    ]),
-
-    /* BACKGROIUND CIRCLE animation */
-    query('.limit ', [
-      style({
-        position: 'absolute',
-        opacity: 1,
-        width: '100vw',
-        height: '100vh',
-      }),
-    ]),
-
-    query('.backgroudcircle ', [
-      style({
-        'background-color': 'var(--darker-UX-color)',
       }),
       animate(
         '750ms ease-out',
         style({
-          transform: 'scale(250)',
-          opacity: 0.7,
+          transform: 'scale(200)',
+          opacity: 0.8,
         })
       ),
+      style({
+        opacity: 0,
+      }),
     ]),
   ]),
 ]);
 
-// HOME TO FE Transition
-export const homeToFETransition = transition('home=>FE', [
+// ANY TO FE Transition
+export const anyToFETransition = transition('*=>FE', [
+  // HOME TO FE Transition
   group([
     /* SUBTITLE animation */
-    query('#subtitle', [
-      animate('400ms', style({ opacity: 0 })),
-      style({ opacity: 0 }),
-    ]),
+    query(
+      '#subtitle',
+      [animate('400ms', style({ opacity: 0 })), style({ opacity: 0 })],
+      { optional: true }
+    ),
 
     /* BOXES animation */
-    query('.container div', [
-      animate('200ms', style({ opacity: 0 })),
-      style({ opacity: 0 }),
-    ]),
+    query(
+      '.container div',
+      [
+        animate('200ms', style({ opacity: 0, transform: 'scale(0)' })),
+        style({ opacity: 0 }),
+      ],
+      { optional: true }
+    ),
 
-    query('.FE', [
-      style({
-        opacity: 1,
-        'background-color': 'var(--darker-FE-color)',
-        'transform-origin': '50% 50%',
-      }),
-      group([
-        animate(
-          '250ms ease-out',
-          style({
-            transform: ' scale(.7)',
-          })
-        ),
-        animate(
-          '400ms',
-          style({
-            opacity: 0,
-          })
-        ),
-      ]),
-    ]),
+    query(
+      '.FE ',
+      [
+        style({
+          opacity: 0.5,
+          'transform-origin': '50% 50%',
+          transform: 'scale(1)',
+        }),
+        group([
+          animate(
+            '1000ms ease-out',
+            style({
+              transform: ' scale(25)',
+              opacity: 0,
+            })
+          ),
+        ]),
+      ],
+      { optional: true }
+    ),
 
     /* BACKGROIUND CIRCLE animation */
     query('.limit ', [
@@ -211,55 +225,64 @@ export const homeToFETransition = transition('home=>FE', [
 
     query('.backgroudcircle ', [
       style({
+        opacity: 0.3,
         'background-color': 'var(--darker-FE-color)',
       }),
       animate(
         '750ms ease-out',
         style({
-          transform: 'scale(250)',
-          opacity: 0.7,
+          transform: 'scale(200)',
+          opacity: 0.8,
         })
       ),
+      style({
+        opacity: 0,
+      }),
     ]),
   ]),
 ]);
 
-// HOME TO SL Transition
-export const homeToSLTransition = transition('home=>SL', [
+// ANY TO SL Transition
+export const anyToSLTransition = transition('*=>SL', [
+  // HOME TO SL Transition
   group([
     /* SUBTITLE animation */
-    query('#subtitle', [
-      animate('400ms', style({ opacity: 0 })),
-      style({ opacity: 0 }),
-    ]),
+    query(
+      '#subtitle',
+      [animate('400ms', style({ opacity: 0 })), style({ opacity: 0 })],
+      { optional: true }
+    ),
 
     /* BOXES animation */
-    query('.container div', [
-      animate('200ms', style({ opacity: 0 })),
-      style({ opacity: 0 }),
-    ]),
+    query(
+      '.container div',
+      [
+        animate('200ms', style({ opacity: 0, transform: 'scale(0)' })),
+        style({ opacity: 0 }),
+      ],
+      { optional: true }
+    ),
 
-    query('.SL', [
-      style({
-        opacity: 1,
-        'background-color': 'var(--darker-SL-color)',
-        'transform-origin': '50% 50%',
-      }),
-      group([
-        animate(
-          '250ms ease-out',
-          style({
-            transform: ' scale(.7)',
-          })
-        ),
-        animate(
-          '400ms',
-          style({
-            opacity: 0,
-          })
-        ),
-      ]),
-    ]),
+    query(
+      '.SL ',
+      [
+        style({
+          opacity: 0.5,
+          'transform-origin': '50% 50%',
+          transform: 'scale(1)',
+        }),
+        group([
+          animate(
+            '1000ms ease-out',
+            style({
+              transform: ' scale(25)',
+              opacity: 0,
+            })
+          ),
+        ]),
+      ],
+      { optional: true }
+    ),
 
     /* BACKGROIUND CIRCLE animation */
     query('.limit ', [
@@ -273,55 +296,64 @@ export const homeToSLTransition = transition('home=>SL', [
 
     query('.backgroudcircle ', [
       style({
+        opacity: 0.3,
         'background-color': 'var(--darker-SL-color)',
       }),
       animate(
         '750ms ease-out',
         style({
-          transform: 'scale(250)',
-          opacity: 0.7,
+          transform: 'scale(200)',
+          opacity: 0.8,
         })
       ),
+      style({
+        opacity: 0,
+      }),
     ]),
   ]),
 ]);
 
-// HOME TO BE Transition
-export const homeToBETransition = transition('home=>BE', [
+// ANY TO BE Transition
+export const anyToBETransition = transition('*=>BE', [
+  // HOME TO BE Transition
   group([
     /* SUBTITLE animation */
-    query('#subtitle', [
-      animate('400ms', style({ opacity: 0 })),
-      style({ opacity: 0 }),
-    ]),
+    query(
+      '#subtitle',
+      [animate('400ms', style({ opacity: 0 })), style({ opacity: 0 })],
+      { optional: true }
+    ),
 
     /* BOXES animation */
-    query('.container div', [
-      animate('200ms', style({ opacity: 0 })),
-      style({ opacity: 0 }),
-    ]),
+    query(
+      '.container div',
+      [
+        animate('200ms', style({ opacity: 0, transform: 'scale(0)' })),
+        style({ opacity: 0 }),
+      ],
+      { optional: true }
+    ),
 
-    query('.BE', [
-      style({
-        opacity: 1,
-        'background-color': 'var(--darker-BE-color)',
-        'transform-origin': '50% 50%',
-      }),
-      group([
-        animate(
-          '250ms ease-out',
-          style({
-            transform: ' scale(.7)',
-          })
-        ),
-        animate(
-          '400ms',
-          style({
-            opacity: 0,
-          })
-        ),
-      ]),
-    ]),
+    query(
+      '.BE ',
+      [
+        style({
+          opacity: 0.5,
+          'transform-origin': '50% 50%',
+          transform: 'scale(1)',
+        }),
+        group([
+          animate(
+            '1000ms ease-out',
+            style({
+              transform: ' scale(25)',
+              opacity: 0,
+            })
+          ),
+        ]),
+      ],
+      { optional: true }
+    ),
 
     /* BACKGROIUND CIRCLE animation */
     query('.limit ', [
@@ -335,15 +367,19 @@ export const homeToBETransition = transition('home=>BE', [
 
     query('.backgroudcircle ', [
       style({
+        opacity: 0.3,
         'background-color': 'var(--darker-BE-color)',
       }),
       animate(
         '750ms ease-out',
         style({
-          transform: 'scale(250)',
-          opacity: 0.7,
+          transform: 'scale(200)',
+          opacity: 0.8,
         })
       ),
+      style({
+        opacity: 0,
+      }),
     ]),
   ]),
 ]);

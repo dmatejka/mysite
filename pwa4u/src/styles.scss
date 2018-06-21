@@ -135,16 +135,24 @@ button {
 
 .UX-route {
   background-color: var(--main-UX-color);
+  -webkit-transition: background-color 150ms ease-in; /* Safari */
+  transition: background-color 150ms ease-in;
 }
 
 .FE-route {
   background-color: var(--main-FE-color);
+  -webkit-transition: background-color 150ms ease-in; /* Safari */
+  transition: background-color 150ms ease-in;
 }
 
 .BE-route {
   background-color: var(--main-BE-color);
+  -webkit-transition: background-color 150ms ease-in; /* Safari */
+  transition: background-color 150ms ease-in;
 }
 
 .SL-route {
   background-color: var(--main-SL-color);
+  -webkit-transition: background-color 150ms ease-in; /* Safari */
+  transition: background-color 150ms ease-in;
 }

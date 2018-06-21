@@ -34,5 +34,9 @@
 
 
 <div class="route-container" [@routeAnimations]=prepareRouteAnimation(outlet)>
-  <router-outlet #outlet="outlet"></router-outlet>
+  <div class="limit">
+    <router-outlet #outlet="outlet"></router-outlet>
+
+    <div class="backgroudcircle"></div>
+  </div>
 </div>
