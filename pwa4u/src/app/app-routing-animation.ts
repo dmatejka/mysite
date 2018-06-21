@@ -65,7 +65,38 @@ export const homeTransition = transition('*=>home', [
       ],
       { optional: true }
     ),
+
+    /* BACKGROIUND CIRCLE animation */
+    query('.limit ', [
+      style({
+        position: 'absolute',
+        top: '10vh',
+        opacity: 1,
+        width: '100vw',
+        height: '90vh',
+      }),
+    ]),
+
+    query('.backgroudcircle ', [
+      style({
+        'z-index': -1,
+        opacity: 0,
+        'background-color': 'var(--lighter-primary-color)',
+      }),
+      animate(
+        '750ms ease-out',
+        style({
+          transform: 'scale(200)',
+          opacity: 1,
+        })
+      ),
+      style({
+        opacity: 0,
+      }),
+    ]),
   ]),
+
+  // stroboscope
   query(
     '.container div ',
     stagger('250ms', [
