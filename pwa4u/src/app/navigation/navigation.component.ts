@@ -27,9 +27,6 @@ export class NavigationComponent implements OnInit, OnChanges {
         Number(this.direction.to) - Number(this.direction.from) > 0
           ? 'UP'
           : 'DOWN';
-      console.log('this.direction', this.direction);
-
-      console.log('direction', dir);
 
       // generate sequence from – to, based on navigation from – to
       const seq = Array.from(
@@ -49,16 +46,6 @@ export class NavigationComponent implements OnInit, OnChanges {
       const navsequence$ = zip(source$, timer$, (o, t) => o);
 
       navsequence$.subscribe(data => {
-        console.log(data, dir);
-        console.log(
-          'from:',
-          this.pointerState1,
-          this.pointerState2,
-          this.pointerState3,
-          this.pointerState4,
-          this.pointerState5
-        );
-
         if (data === 1) {
           this.pointerState1 = this.direction.to === 1 ? 'active' : dir;
         }
@@ -74,15 +61,6 @@ export class NavigationComponent implements OnInit, OnChanges {
         if (data === 5) {
           this.pointerState5 = this.direction.to === 5 ? 'active' : dir;
         }
-
-        console.log(
-          'to:',
-          this.pointerState1,
-          this.pointerState2,
-          this.pointerState3,
-          this.pointerState4,
-          this.pointerState5
-        );
       });
     }
   }

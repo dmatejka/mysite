@@ -146,15 +146,16 @@ export const anyToUXTransition = transition('*=>UX', [
     query('.limit ', [
       style({
         position: 'absolute',
+        top: '10vh',
         opacity: 1,
         width: '100vw',
-        height: '100vh',
+        height: '90vh',
       }),
     ]),
 
     query('.backgroudcircle ', [
       style({
-        opacity: 0.3,
+        opacity: 0,
         'background-color': 'var(--darker-UX-color)',
       }),
       animate(
@@ -217,15 +218,16 @@ export const anyToFETransition = transition('*=>FE', [
     query('.limit ', [
       style({
         position: 'absolute',
+        top: '10vh',
         opacity: 1,
         width: '100vw',
-        height: '100vh',
+        height: '90vh',
       }),
     ]),
 
     query('.backgroudcircle ', [
       style({
-        opacity: 0.3,
+        opacity: 0,
         'background-color': 'var(--darker-FE-color)',
       }),
       animate(
@@ -288,15 +290,16 @@ export const anyToSLTransition = transition('*=>SL', [
     query('.limit ', [
       style({
         position: 'absolute',
+        top: '10vh',
         opacity: 1,
         width: '100vw',
-        height: '100vh',
+        height: '90vh',
       }),
     ]),
 
     query('.backgroudcircle ', [
       style({
-        opacity: 0.3,
+        opacity: 0,
         'background-color': 'var(--darker-SL-color)',
       }),
       animate(
@@ -359,15 +362,16 @@ export const anyToBETransition = transition('*=>BE', [
     query('.limit ', [
       style({
         position: 'absolute',
+        top: '10vh',
         opacity: 1,
         width: '100vw',
-        height: '100vh',
+        height: '90vh',
       }),
     ]),
 
     query('.backgroudcircle ', [
       style({
-        opacity: 0.3,
+        opacity: 0,
         'background-color': 'var(--darker-BE-color)',
       }),
       animate(

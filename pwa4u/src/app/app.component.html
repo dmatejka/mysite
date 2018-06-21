@@ -11,7 +11,7 @@
     <p class="action">Building</p>
     <p class="subject">Progressive Web Applications</p>
   </div>
-  <x5-navigation [direction]=positionDirection></x5-navigation>
+  <x5-navigation id='topnav' [direction]=positionDirection *ngIf="(url != 'home')"></x5-navigation>
 </div>
 
 <div class="CTA">

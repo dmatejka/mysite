@@ -1,5 +1,6 @@
 #menu {
   display: flex;
+  align-self: flex-end;
   align-items: center;
   justify-content: center;
   margin-top: 2em;
@@ -8,13 +9,17 @@
   .container {
     display: flex;
     width: calc(50vw + 16px);
+    justify-content: center;
+    min-width: calc(18em + 16px);
+    min-height: calc(18em + 16px);
+
     // height: calc(70vw + 30px);
-    // max-width: calc(70vw + 30px);
-    // max-height: calc(70vw + 30px);
     flex-wrap: wrap;
     div {
       width: 25vw;
       height: 25vw;
+      min-width: 9em;
+      min-height: 9em;
       max-width: 25vw;
       max-height: 25vw;
       display: flex;
@@ -93,5 +98,18 @@
   img {
     max-width: 80vw;
     max-height: 30vh;
+  }
+}
+
+@media only screen and (min-width: 1050px) and (min-height: 500px) {
+  #menu {
+    .container {
+      div {
+        width: 25vw;
+        height: 25vw;
+        max-width: 20vw;
+        max-height: 20vw;
+      }
+    }
   }
 }

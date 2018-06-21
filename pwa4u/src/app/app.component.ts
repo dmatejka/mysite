@@ -39,6 +39,7 @@ export class AppComponent implements OnInit {
   previousPosition = 1;
   currentPosition = 1;
   positionDirection: any;
+  url: any;
 
   constructor(
     private renderer: Renderer2,
@@ -67,6 +68,7 @@ export class AppComponent implements OnInit {
         tap(d => console.log('ROUTE DATA:', d))
       )
       .subscribe(urlname => {
+        this.url = urlname;
         // change <body> CLASS => change body color
         if (this.previousUrl) {
           this.renderer.removeClass(document.body, `${this.previousUrl}-route`);

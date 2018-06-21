@@ -1,12 +1,12 @@
 /* HEADER */
 #header {
-  position: sticky;
+  // position: sticky;
   z-index: 1500;
   // background-color: var(--main-primary-color);
   // color: var(--light-primary-color);
   height: 10vh;
   width: 100%;
-  min-height: 4em;
+  // min-height: 4em;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,16 +14,22 @@
   animation: HeaderAnimation 150ms 250ms ease-in-out forwards;
   .title {
     text-align: left;
-    margin-left: 5em;
+    margin-left: 5vw;
+    margin-right: 2vw;
     .action {
-      font-size: 0.9rem;
-      font-weight: 300;
+      font-size: calc(0.4vw + 10px);
+      font-weight: 200;
     }
     .subject {
-      font-size: 1.3em;
+      white-space: nowrap;
+      font-size: calc(0.4vw + 16px);
       font-weight: 400;
     }
   }
+}
+
+#topnav {
+  display: none;
 }
 
 @keyframes HeaderAnimation {
@@ -64,7 +70,20 @@
     display: none;
   }
 }
-@media only screen and (min-width: 600px) and (min-height: 500px) {
+
+@media only screen and (max-height: 400px) {
+  .title {
+    .action {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (min-width: 690px) and (min-height: 500px) {
+  #topnav {
+    display: block;
+  }
+
   .CTA {
     right: 15vw;
     bottom: 15vh;
@@ -94,7 +113,7 @@
     top: 50vh;
     opacity: 0;
     border-radius: 50%;
-    width: 1em;
-    height: 1em;
+    width: 10px;
+    height: 10px;
   }
 }
