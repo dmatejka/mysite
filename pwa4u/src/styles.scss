@@ -106,23 +106,31 @@ button {
 /* color variables */
 
 :root {
-  --light-primary-color: #f3eef3;
+  --light-primary-color: #f7e7f7;
+  --lighter-primary-color: #f3dcf3;
   --main-primary-color: #86078b;
   --darker-primary-color: #6e0472;
   --dark-primary-color: #5f0263;
 
+  --light-UX-color: #b8e3ff;
   --main-UX-color: #0083db;
   --darker-UX-color: #005c99;
   --dark-UX-color: #004c80;
 
+  --light-FE-color: #aef1ff;
+  --lighter-FE-color: #7ce3f8;
   --main-FE-color: #00b5db;
   --darker-FE-color: #007e99;
   --dark-FE-color: #006980;
 
-  --main-SL-color: #f87400;
-  --darker-SL-color: #be5c05e1;
-  --dark-SL-color: #cb5f01c0;
+  --light-SL-color: #f8dcc3;
+  --lighter-SL-color: #ffbc82;
+  --main-SL-color: #f8841f;
+  --darker-SL-color: #cf6100e1;
+  --dark-SL-color: #aa5505c0;
 
+  --light-BE-color: #fdd0c0;
+  --lighter-BE-color: #fd7f51;
   --main-BE-color: #f84400;
   --darker-BE-color: #d93c01;
   --dark-BE-color: #be3704;
@@ -131,28 +139,60 @@ button {
 /* main background */
 .home-route {
   background-color: var(--light-primary-color);
+  -webkit-transition: background-color 150ms ease-in; /* Safari */
+  transition: background-color 150ms ease-in;
+  #header {
+    background-color: var(--dark-primary-color);
+    color: var(--light-primary-color);
+    -webkit-transition: background-color 250ms ease-in; /* Safari */
+    transition: background-color 250ms ease-in;
+  }
 }
 
 .UX-route {
   background-color: var(--main-UX-color);
   -webkit-transition: background-color 150ms ease-in; /* Safari */
   transition: background-color 150ms ease-in;
+  #header {
+    background-color: var(--dark-UX-color);
+    color: var(--light-UX-color);
+    -webkit-transition: background-color 250ms ease-in; /* Safari */
+    transition: background-color 250ms ease-in;
+  }
 }
 
 .FE-route {
   background-color: var(--main-FE-color);
   -webkit-transition: background-color 150ms ease-in; /* Safari */
   transition: background-color 150ms ease-in;
+  #header {
+    background-color: var(--dark-FE-color);
+    color: var(--light-FE-color);
+    -webkit-transition: background-color 250ms ease-in; /* Safari */
+    transition: background-color 250ms ease-in;
+  }
 }
 
 .BE-route {
   background-color: var(--main-BE-color);
   -webkit-transition: background-color 150ms ease-in; /* Safari */
   transition: background-color 150ms ease-in;
+  #header {
+    background-color: var(--dark-BE-color);
+    color: var(--light-BE-color);
+    -webkit-transition: background-color 250ms ease-in; /* Safari */
+    transition: background-color 250ms ease-in;
+  }
 }
 
 .SL-route {
   background-color: var(--main-SL-color);
   -webkit-transition: background-color 150ms ease-in; /* Safari */
   transition: background-color 150ms ease-in;
+  #header {
+    background-color: var(--dark-SL-color);
+    color: var(--light-SL-color);
+    -webkit-transition: background-color 250ms ease-in; /* Safari */
+    transition: background-color 250ms ease-in;
+  }
 }
