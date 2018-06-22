@@ -1,3 +1,5 @@
-<a [routerLink]="link" [class]=link routerLinkActive="activated">{{title}}
+<a [routerLink]="link" [class]=link routerLinkActive="activated">
+  <span class="pointer top" [@animatePointer]=state></span>
+  {{title}}
   <span class="pointer" [@animatePointer]=state></span>
 </a>
