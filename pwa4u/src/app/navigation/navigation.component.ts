@@ -21,7 +21,7 @@ import { NavItemComponent } from './nav-item/nav-item.component';
 export class NavigationComponent implements OnInit, OnChanges, AfterViewInit {
   @ViewChild('linkbar', { read: ElementRef })
   linkbar: ElementRef;
-  @ViewChild('UX') UXel: ElementRef;
+  @ViewChild('navbar') navbarEl: ElementRef;
   @ViewChildren(NavItemComponent, { read: ElementRef })
   navComponents: QueryList<ElementRef<NavItemComponent>>;
 
@@ -43,8 +43,10 @@ export class NavigationComponent implements OnInit, OnChanges, AfterViewInit {
     const linkbarnative: HTMLElement = this.linkbar.nativeElement;
     const elnative: HTMLElement = element.nativeElement;
 
-    linkbarnative.style.left = element
-      ? (elnative.offsetLeft || 0) + 'px'
+    linkbarnative.style.transform = element
+      ? // linkbarnative.style.left = element
+        // ? (elnative.offsetLeft || 0) + 'px'
+        'translateX(' + (elnative.offsetLeft || 0) + 'px)'
       : '0';
     linkbarnative.style.width = elnative
       ? (elnative.offsetWidth || 0) + 'px'
@@ -75,10 +77,10 @@ export class NavigationComponent implements OnInit, OnChanges, AfterViewInit {
     console.log('element found', found);
 
     if (typeof requestAnimationFrame !== 'undefined') {
-      this._ngZone.runOutsideAngular(() => {
-        requestAnimationFrame(() => this._setStyles(found));
-      });
-    } else {
+      //   this._ngZone.runOutsideAngular(() => {
+      //     requestAnimationFrame(() => this._setStyles(found));
+      //   });
+      // } else {
       this._setStyles(found);
     }
 
@@ -93,7 +95,7 @@ export class NavigationComponent implements OnInit, OnChanges, AfterViewInit {
   ngAfterViewInit(): void {
     // this.navComponents.changes.subscribe(items => console.log(items));
     // this.getElementDim();
-    console.log(this.linkbar.nativeElement);
+    console.log(this.navbarEl.nativeElement);
     console.log(this.navComponents.toArray());
   }
 
