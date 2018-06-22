@@ -1,7 +1,11 @@
 <nav>
-  <x5-nav-item link="home" title="HOME" [state]=pointerState1></x5-nav-item>
-  <x5-nav-item link="UX" title="eXperience" [state]=pointerState2></x5-nav-item>
-  <x5-nav-item link="FE" title="Front End" [state]=pointerState3></x5-nav-item>
-  <x5-nav-item link="SL" title="Serverless" [state]=pointerState4></x5-nav-item>
-  <x5-nav-item link="BE" title="Back End" [state]=pointerState5></x5-nav-item>
+  <div #linkbar class="bar"></div>
+  <!-- <div #linkbar [style.width]="FE.offsetWidth" [style.left]="FE.offsetLeft" class="resp"></div> -->
+  <div class="navitems">
+    <x5-nav-item link="home" (tap)="getElementDim(0)" #home title="HOME"></x5-nav-item>
+    <x5-nav-item link="UX" (tap)="getElementDim(1)" #UX title="eXperience"></x5-nav-item>
+    <x5-nav-item link="FE" (tap)="getElementDim(2)" #FE title="Front End"></x5-nav-item>
+    <x5-nav-item link="SL" (tap)="getElementDim(3)" #SL title="Serverless"></x5-nav-item>
+    <x5-nav-item link="BE" (tap)="getElementDim(4)" #BE title="Back End"></x5-nav-item>
+  </div>
 </nav>
