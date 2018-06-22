@@ -22,7 +22,7 @@ export class NavigationComponent implements OnInit, OnChanges {
 
   ngOnChanges() {
     if (this.direction && this.direction.to - this.direction.from !== 0) {
-      const count = Math.abs(this.direction.to - this.direction.from) + 1 || 0;
+      const steps = Math.abs(this.direction.to - this.direction.from) + 1 || 0;
       const dir =
         Number(this.direction.to) - Number(this.direction.from) > 0
           ? 'UP'
@@ -30,7 +30,7 @@ export class NavigationComponent implements OnInit, OnChanges {
 
       // generate sequence from – to, based on navigation from – to
       const seq = Array.from(
-        { length: count },
+        { length: steps },
         (v, i) =>
           this.direction.to - this.direction.from > 0
             ? this.direction.from + i

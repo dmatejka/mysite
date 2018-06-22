@@ -29,7 +29,7 @@
 }
 
 #topnav {
-  display: none;
+  display: flex;
 }
 
 @keyframes HeaderAnimation {
@@ -50,13 +50,13 @@
 
 /* CTA */
 .CTA {
-  position: absolute;
+  position: fixed;
   right: 15vw;
   bottom: 15vh;
   button {
     background-color: var(--main-primary-color);
     color: whitesmoke;
-    z-index: 100;
+    z-index: 15000;
     // &::before {
     //   content: url('/assets/icons/baseline-chat-24px.svg');
     //   // content: 'aaa';
@@ -81,7 +81,12 @@
 
 @media only screen and (min-width: 690px) and (min-height: 500px) {
   #topnav {
-    display: block;
+    display: flex;
+    position: relative;
+    right: 0;
+    transform: translateY(-100%);
+    // width: initial;
+    justify-content: flex-end;
   }
 
   .CTA {

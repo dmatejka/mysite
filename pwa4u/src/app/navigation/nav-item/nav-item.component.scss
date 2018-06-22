@@ -1,3 +1,6 @@
+:host {
+  width: 100%;
+}
 a {
   overflow: hidden;
   display: flex;
@@ -25,6 +28,23 @@ a {
     font-weight: 500;
     // opacity: 1;
     // background-color: #ffff8d;
+  }
+}
+
+.shorttitle {
+  display: block;
+  text-align: center;
+}
+.longtitle {
+  display: none;
+}
+
+@media only screen and (min-width: 690px) and (min-height: 500px) {
+  .shorttitle {
+    display: none;
+  }
+  .longtitle {
+    display: block;
   }
 }
 

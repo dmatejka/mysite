@@ -1,5 +1,6 @@
 <a [routerLink]="link" [class]=link routerLinkActive="activated">
   <span class="pointer top" [@animatePointer]=state></span>
-  {{title}}
+  <span class="longtitle">{{title}}</span>
+  <span class="shorttitle">{{link}}</span>
   <span class="pointer" [@animatePointer]=state></span>
 </a>

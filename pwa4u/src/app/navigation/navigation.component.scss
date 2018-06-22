@@ -1,19 +1,17 @@
-:host {
-  align-self: flex-end;
-}
-
 nav {
-  // position: absolute;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
   // transform-origin: 100% 100%;
   // right: 100%;
   // z-index: 10000;
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  flex-basis: 50vw;
-  margin-top: 1em;
-  margin-bottom: 0em;
-  font-size: calc(0.3vw + 10px);
+  // align-items: flex-end;
+  // justify-content: flex-end;
+  // flex-basis: 50vw;
+  // margin-top: 1em;
+  // margin-bottom: 0em;
+  font-size: calc(0.3vw + 14px);
   font-weight: 200;
   // a {
   //   overflow: hidden;
@@ -35,4 +33,17 @@ nav {
   //     background-color: #ffff8d;
   //   }
   // }
+  .home {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 690px) and (min-height: 500px) {
+  .home {
+    display: block;
+  }
+  nav {
+    width: initial;
+    font-size: calc(0.3vw + 10px);
+  }
 }
