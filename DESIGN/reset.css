@@ -1,0 +1,232 @@
+/* CSS BROWSER RESET */
+
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+input,
+textarea,
+label,
+blockquote,
+table,
+button,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  font-family: Roboto, Verdana, Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  line-height: 1.4;
+}
+
+a,
+span {
+  background-repeat: no-repeat;
+  outline: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset,
+img,
+abbr,
+acronym {
+  border: none;
+  text-decoration: none;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+caption,
+th {
+  text-align: left;
+  font-weight: normal;
+}
+
+q:before,
+q:after {
+  content: '';
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* MY RESETS */
+
+button {
+  font-size: 14px;
+}
+
+/* color variables */
+
+:root {
+  --light-primary-color: #f7e7f7;
+  --lighter-primary-color: #f3dcf3;
+  --main-primary-color: #86078b;
+  --darker-primary-color: #6e0472;
+  --dark-primary-color: #5f0263;
+
+  --light-UX-color: #b8e3ff;
+  --lighter-UX-color: #2497e4;
+  --main-UX-color: #0083db;
+  --darker-UX-color: #005c99;
+  --dark-UX-color: #004c80;
+
+  --light-FE-color: #aef1ff;
+  --lighter-FE-color: #7ce3f8;
+  --main-FE-color: #00b5db;
+  --darker-FE-color: #007e99;
+  --dark-FE-color: #006980;
+
+  --light-SL-color: #f8dcc3;
+  --lighter-SL-color: #ffbc82;
+  --main-SL-color: #f8841f;
+  --darker-SL-color: #cf6100e1;
+  --dark-SL-color: #aa5505c0;
+
+  --light-BE-color: #fdd0c0;
+  --lighter-BE-color: #fd7f51;
+  --main-BE-color: #f84400;
+  --darker-BE-color: #d93c01;
+  --dark-BE-color: #be3704;
+}
+
+.primary__light_color {
+  background-color: var(--light-primary-color);
+  color: var(--light-primary-color);
+}
+.primary__lighter_color {
+  background-color: var(--lighter-primary-color);
+  color: var(--light-primary-color);
+}
+.primary__main_color {
+  background-color: var(--main-primary-color);
+  color: var(--light-primary-color);
+}
+.primary__darker_color {
+  background-color: var(--darker-primary-color);
+  color: var(--light-primary-color);
+}
+.primary__dark_color {
+  background-color: var(--dark-primary-color);
+  color: var(--light-primary-color);
+}
+
+.UX__light_color {
+  background-color: var(--light-UX-color);
+  color: var(--light-UX-color);
+}
+.UX__main_color {
+  background-color: var(--main-UX-color);
+  color: var(--light-UX-color);
+}
+.UX__darker_color {
+  background-color: var(--darker-UX-color);
+  color: var(--light-UX-color);
+}
+.UX__dark_color {
+  background-color: var(--dark-UX-color);
+  color: var(--light-UX-color);
+}
+
+.FE__light_color {
+  background-color: var(--light-FE-color);
+  color: var(--light-FE-color);
+}
+.FE__lighter_color {
+  background-color: var(--lighter-FE-color);
+  color: var(--light-FE-color);
+}
+.FE__main_color {
+  background-color: var(--main-FE-color);
+  color: var(--light-FE-color);
+}
+.FE__darker_color {
+  background-color: var(--darker-FE-color);
+  color: var(--light-FE-color);
+}
+.FE__dark_color {
+  background-color: var(--dark-FE-color);
+  color: var(--light-FE-color);
+}
+
+.SL__light_color {
+  background-color: var(--light-SL-color);
+  color: var(--light-SL-color);
+}
+.SL__lighter_color {
+  background-color: var(--lighter-SL-color);
+  color: var(--light-SL-color);
+}
+.SL__main_color {
+  background-color: var(--main-SL-color);
+  color: var(--light-SL-color);
+}
+.SL__darker_color {
+  background-color: var(--darker-SL-color);
+  color: var(--light-SL-color);
+}
+.SL__dark_color {
+  background-color: var(--dark-SL-color);
+  color: var(--light-SL-color);
+}
+
+.BE__light_color {
+  background-color: var(--light-BE-color);
+  color: var(--light-BE-color);
+}
+.BE__lighter_color {
+  background-color: var(--lighter-BE-color);
+  color: var(--light-BE-color);
+}
+.BE__main_color {
+  background-color: var(--main-BE-color);
+  color: var(--light-BE-color);
+}
+.BE__darker_color {
+  background-color: var(--darker-BE-color);
+  color: var(--light-BE-color);
+}
+.BE__dark_color {
+  background-color: var(--dark-BE-color);
+  color: var(--light-BE-color);
+}
