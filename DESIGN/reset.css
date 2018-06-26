@@ -99,8 +99,14 @@ button {
 /* color variables */
 
 :root {
-  --light-primary-color: #f7e7f7;
-  --lighter-primary-color: #f3dcf3;
+  --light-accent-color: #f0e2a4;
+  --lighter-accent-color: #ffdf50;
+  --main-accent-color: #ffc107;
+  --darker-accent-color: #f8b015;
+  --dark-accent-color: #e79f04;
+
+  --light-primary-color: #fae8fa;
+  --lighter-primary-color: rgb(250, 123, 250);
   --main-primary-color: #86078b;
   --darker-primary-color: #6e0472;
   --dark-primary-color: #5f0263;
@@ -234,4 +240,25 @@ button {
 .shadow-3dp {
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2),
     0 1px 8px 0 rgba(0, 0, 0, 0.12);
+}
+
+.shadow-6dp {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12),
+    0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+/* ANIMATION */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+      0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  }
+  70% {
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+      0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+      0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  }
 }
