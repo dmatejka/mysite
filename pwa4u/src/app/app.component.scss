@@ -1,5 +1,7 @@
 /* HEADER */
 #header {
+  position: absolute;
+  top: 0;
   // position: sticky;
   z-index: 1500;
   // background-color: var(--main-primary-color);
@@ -24,6 +26,7 @@
       white-space: nowrap;
       font-size: calc(0.4vw + 16px);
       font-weight: 400;
+      user-select: none;
     }
   }
 }
@@ -81,6 +84,7 @@
 
 @media only screen and (min-width: 690px) and (min-height: 500px) {
   #topnav {
+    z-index: 20000;
     display: flex;
     position: relative;
     right: 0;

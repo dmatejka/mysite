@@ -176,6 +176,7 @@ export const anyToUXTransition = transition('*=>UX', [
     /* BACKGROIUND CIRCLE animation */
     query('.limit ', [
       style({
+        'z-index': 100,
         position: 'absolute',
         top: '10vh',
         opacity: 1,
