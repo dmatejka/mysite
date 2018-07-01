@@ -1,0 +1,262 @@
+/* CSS BROWSER RESET */
+
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+input,
+textarea,
+label,
+blockquote,
+table,
+button,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  font-family: Roboto, Verdana, Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  line-height: 1.4;
+}
+
+a,
+span {
+  background-repeat: no-repeat;
+  outline: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset,
+img,
+abbr,
+acronym {
+  border: none;
+  text-decoration: none;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+caption,
+th {
+  text-align: left;
+  font-weight: normal;
+}
+
+q:before,
+q:after {
+  content: '';
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* ***** ICON MOBILE *** */
+
+#icon.screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* display: grid;
+  grid-template-rows: 12% auto 9%; */
+  height: 90vh;
+  width: 90vw;
+  overflow: hidden;
+}
+
+#icon .header {
+  height: 12%;
+  /* grid-row: 1/2; */
+  background-color: grey;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+#icon .title {
+  margin: 0 1em;
+  width: 50%;
+  height: 30%;
+  background-color: antiquewhite;
+  opacity: 0.7;
+}
+#icon .nav-top {
+  width: 50%;
+  height: 30%;
+  display: flex;
+  align-self: flex-end;
+  transform: translateY(100%);
+}
+#icon .nav-top > div {
+  background-color: rgb(194, 194, 194);
+  height: 100%;
+  width: 25%;
+  border: 1px solid grey;
+}
+
+#icon .main {
+  display: flex;
+  min-height: 88%;
+  overflow-y: hidden;
+}
+
+#icon .main .detail {
+  background-color: rgba(211, 209, 209, 0.623);
+  transform: scaleX(0);
+  /* height: 100%; */
+}
+#icon .main .detail .item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#icon .main .detail .item .image {
+  height: 40%;
+  background-color: rgb(170, 169, 169);
+}
+
+#icon .main .detail .item .text {
+  height: 100%;
+}
+#icon .main .detail .item .text p {
+  margin: 9% 7%;
+}
+
+#icon.showdetail > .main .detail {
+  flex: 1;
+  /* background-color: red; */
+  transform: scaleX(1);
+}
+#icon.showdetail > .main .list {
+  flex: 0;
+  transform: scaleX(0);
+}
+
+#icon .list {
+  flex: 1;
+  /* grid-row: 2/3; */
+  width: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: stretch; */
+}
+
+#icon .list .item {
+  /* position: relative; */
+  display: inline-block;
+  height: 25%;
+  width: 100%;
+  /* min-width: 40%; */
+  background-color: rgb(238, 238, 238);
+  margin: 2%;
+  display: flex;
+}
+#icon .list .image {
+  background-color: rgb(170, 169, 169);
+  width: 40%;
+  height: 100%;
+}
+#icon .list .text {
+  /* height: 100%; */
+  width: 60%;
+  overflow: hidden;
+  /* margin: 10% 10%; */
+}
+
+#icon p {
+  background-color: lightgray;
+  width: 80%;
+  height: 10%;
+  margin: 4% 5%;
+}
+#icon p:first-of-type {
+  width: 70%;
+  background-color: gray;
+}
+
+#icon .footer {
+  background-color: royalblue;
+  /* grid-row: 3/4; */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 9%;
+}
+#icon .nav-bottom {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-self: flex-end;
+}
+
+#icon .nav-bottom > div {
+  background-color: rgb(194, 194, 194);
+  height: 100%;
+  width: 25%;
+  border: 2px solid rgb(156, 156, 156);
+}
+
+/* TABLET and DESKTOP */
+#icon.desktop .nav-top,
+#icon.tablet .nav-top {
+  transform: translateY(0);
+}
+#icon.tablet .item {
+  width: 28%;
+}
+
+#icon.tablet .footer,
+#icon.desktop .footer {
+  transform: translateY(100%);
+}
+
+/*  DESKTOP */
+#icon.desktop > .main .detail {
+  flex: 1;
+  /* background-color: red; */
+  transform: scaleX(1);
+}
+#icon.desktop > .main .list {
+  flex: 1;
+  transform: scaleX(1);
+}
