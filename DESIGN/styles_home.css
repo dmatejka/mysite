@@ -85,6 +85,7 @@ nav.nav-center {
 .nav-center .nav-item {
   color: var(--light-primary-color);
   position: relative;
+  text-decoration: none;
   /* width: 100%;
     height: 100%; */
   /* border-radius: 20% 0; */
@@ -184,37 +185,50 @@ nav.nav-center {
   width: 100%;
   height: 2px;
   top: 0%;
-  transform: translateX(-300%);
+  /* transform: translateX(-300%); */
 }
 .line.line_bottom {
   height: 2px;
   width: 100%;
   top: 100%;
-  transform: translateX(-300%);
-}
-
-.nav-item__left .line.line_top,
-.nav-item__left .line.line_bottom {
-  transform: translateX(300%);
+  /* transform: translateX(-300%); */
 }
 
 .line.line_right {
   width: 2px;
   height: 100%;
   right: 0%;
-  transform: translateY(-300%);
+  /* transform: translateY(-300%); */
 }
 
 .line.line_left {
   width: 2px;
   height: 100%;
   left: 0%;
-  transform: translateY(-300%);
+  /* transform: translateY(-300%); */
+}
+
+.nav-item__left .line.line_top,
+.nav-item__left .line.line_bottom {
+  /* transform: translateX(300%); */
+  animation: 1500ms linesleft ease-out;
+}
+.nav-item__right .line.line_top,
+.nav-item__right .line.line_bottom {
+  animation: 1500ms linesright ease-out;
+  /* transform: translateX(-300%); */
 }
 
 .nav-item__bottom .line_left,
 .nav-item__bottom .line_right {
-  transform: translateY(+300%);
+  animation: 1500ms linesbottom ease-out;
+  /* transform: translateY(+300%); */
+}
+
+.nav-item__top .line_left,
+.nav-item__top .line_right {
+  animation: 1500ms linestop ease-out;
+  /* transform: translateY(-300%); */
 }
 
 button {
@@ -294,13 +308,77 @@ button:active {
 }
 
 #subtitle {
-  height: 11vh;
-  /* margin-top: 3vh;
-  margin-bottom: 3vh; */
+  height: 10rem;
   width: 100%;
   display: flex;
-  /* align-items: center; */
   justify-content: center;
+}
+
+#icon-responsive {
+  height: 30vw;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transition: all 250ms ease-in-out;
+}
+
+#icon-responsive > div {
+  position: relative;
+  height: 100%;
+}
+#icon-responsive .icon-responsive-content {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  /* background-color: #8283af; */
+  width: 100%;
+  height: 100%;
+}
+
+.screencast {
+  overflow-y: auto;
+  /* background-color: red; */
+  width: 100%;
+  height: 100%;
+}
+
+#icon-responsive div > svg {
+  display: none;
+  transform: scale(0);
+}
+#icon-responsive .mobile .svg-mobile {
+  transform: scale(1);
+  display: block;
+  height: 100%;
+}
+#icon-responsive .mobile .icon-responsive-content {
+  top: 10%;
+  left: 3.5%;
+  height: 80%;
+  width: 93%;
+}
+
+#icon-responsive .tablet .svg-tablet {
+  transform: scale(1);
+  display: block;
+  height: 100%;
+}
+#icon-responsive .tablet .icon-responsive-content {
+  top: 9%;
+  left: 10%;
+  height: 82%;
+  width: 80%;
+}
+#icon-responsive .desktop .svg-desktop {
+  transform: scale(1);
+  display: block;
+  height: 100%;
+}
+#icon-responsive .desktop .icon-responsive-content {
+  top: 4.5%;
+  left: 4%;
+  height: 73%;
+  width: 92%;
 }
 
 /****  MEDIA QUERIES **** */
@@ -364,6 +442,74 @@ button:active {
 }
 
 /* ANIMATION */
+
+@keyframes linesleft {
+  0% {
+    transform: translateX(300%) scaleX(50);
+    opacity: 0;
+  }
+  45% {
+    transform: translateX(100%) scaleX(1);
+  }
+  60% {
+    /* transform: translateX(-100%) scaleX(1.5); */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%) scaleX(1);
+  }
+}
+
+@keyframes linesright {
+  0% {
+    transform: translateX(-300%) scaleX(50);
+    opacity: 0;
+  }
+  45% {
+    transform: translateX(-100%) scaleX(1);
+  }
+  60% {
+    /* transform: translateX(100%) scaleX(1.5); */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%) scaleX(1);
+  }
+}
+
+@keyframes linesbottom {
+  0% {
+    transform: translateY(300%) scaleY(50);
+    opacity: 0;
+  }
+  45% {
+    transform: translateY(100%) scaleY(1);
+  }
+  60% {
+    /* transform: translateY(-100%) scaleY(1.5); */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%) scaleY(1);
+  }
+}
+
+@keyframes linestop {
+  0% {
+    transform: translateY(-300%) scaleY(50);
+    opacity: 0;
+  }
+  45% {
+    transform: translateY(-100%) scaleY(1);
+  }
+  60% {
+    /* transform: translateY(100%) scaleY(1.5); */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%) scaleY(1);
+  }
+}
 
 @keyframes chatting {
   0% {

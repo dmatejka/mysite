@@ -1,6 +1,6 @@
 /* CSS BROWSER RESET */
 
-body,
+/* body,
 div,
 h1,
 h2,
@@ -80,7 +80,7 @@ select {
 
 /* apply a natural box layout model to all elements, but allowing components to change */
 
-html {
+/* html {
   box-sizing: border-box;
 }
 
@@ -88,7 +88,7 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
-}
+} */
 
 /* ***** ICON MOBILE *** */
 
@@ -98,8 +98,8 @@ html {
   flex-direction: column;
   /* display: grid;
   grid-template-rows: 12% auto 9%; */
-  height: 90vh;
-  width: 90vw;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -120,7 +120,7 @@ html {
 }
 #icon .nav-top {
   width: 50%;
-  height: 30%;
+  height: 50%;
   display: flex;
   align-self: flex-end;
   transform: translateY(100%);
@@ -143,21 +143,21 @@ html {
   transform: scaleX(0);
   /* height: 100%; */
 }
-#icon .main .detail .item {
+#icon .main .detail .detail-item {
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-#icon .main .detail .item .image {
+#icon .main .detail .detail-item .detail-image {
   height: 40%;
   background-color: rgb(170, 169, 169);
 }
 
-#icon .main .detail .item .text {
+#icon .main .detail .detail-item .detail-text {
   height: 100%;
 }
-#icon .main .detail .item .text p {
+#icon .main .detail .detail-item .detail-text p {
   margin: 9% 7%;
 }
 
@@ -237,26 +237,28 @@ html {
 }
 
 /* TABLET and DESKTOP */
-#icon.desktop .nav-top,
-#icon.tablet .nav-top {
+.desktop #icon .nav-top,
+.tablet #icon .nav-top {
   transform: translateY(0);
 }
-#icon.tablet .item {
+.desktop #icon .item,
+.tablet #icon .item {
   width: 28%;
+  height: 15%;
 }
 
-#icon.tablet .footer,
-#icon.desktop .footer {
+.tablet #icon .footer,
+.desktop #icon .footer {
   transform: translateY(100%);
 }
 
 /*  DESKTOP */
-#icon.desktop > .main .detail {
+.desktop #icon > .main .detail {
   flex: 1;
   /* background-color: red; */
   transform: scaleX(1);
 }
-#icon.desktop > .main .list {
+.desktop #icon > .main .list {
   flex: 1;
   transform: scaleX(1);
 }
