@@ -1,0 +1,130 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  background-color: rgb(6, 43, 12);
+  --back-color0: rgba(233, 232, 233, 0.808);
+  --back-color1: rgba(229, 136, 248, 0.548);
+  --back-color2: rgba(159, 241, 126, 0.541);
+  --back-color3: rgba(96, 157, 247, 0.548);
+}
+
+.Grid {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(24, 1fr);
+  width: 100%;
+  height: 100%;
+}
+
+.GridRows,
+.GridCols {
+  grid-area: 1/1/-1/-1;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(24, 1fr);
+}
+.GridRows-item {
+  grid-column: 1/-1;
+  /* height: 1px;
+    background-color: red; */
+  border-bottom: 1px ridge rgba(172, 255, 47, 0.3);
+}
+
+.GridCols-item {
+  grid-row: 1/-1;
+  border-left: 1px ridge rgba(172, 255, 47, 0.3);
+}
+
+.Header {
+  /* width: 10%;
+  height: 10%; */
+  grid-area: 1/1/3/-1;
+  background-color: var(--back-color1);
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  padding: 1em;
+}
+
+.Header-logo {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 5px 0 5px 0;
+  background-color: var(--back-color0);
+}
+
+.Header-title {
+  width: 70%;
+  height: 1em;
+  border-radius: 3px;
+  background-color: var(--back-color0);
+  margin-left: 1em;
+}
+
+.TextContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem;
+}
+.TextContent-1 {
+  grid-area: 4/1/8/-1;
+  background-color: var(--back-color2);
+}
+.TextContent-2 {
+  align-items: flex-start;
+  grid-area: 9/1/13/7;
+  background-color: var(--back-color3);
+}
+.__TitleLine {
+  width: 40%;
+  height: 4px;
+  /* border-radius: 3px; */
+  background-color: var(--back-color0);
+  /* margin-left: 1em; */
+}
+.__SimpleLine {
+  width: 100%;
+  height: 1px;
+  margin: 2px 0;
+  /* border-radius: 3px; */
+  background-color: var(--back-color0);
+  /* margin-left: 1em; */
+}
+
+.__BoldLine {
+  width: 100%;
+  height: 2px;
+  margin: 2px 0;
+  /* border-radius: 3px; */
+  background-color: var(--back-color0);
+  /* margin-left: 1em; */
+}
+
+.__ShortLine {
+  width: 50%;
+}
+
+.ImgContent {
+  background-color: var(--back-color0);
+}
+.ImgContent-lines {
+  width: 100%;
+  height: 100%;
+}
+.ImgContent-1 {
+  grid-area: 9/7/13/-1;
+  max-width: 150px;
+}
