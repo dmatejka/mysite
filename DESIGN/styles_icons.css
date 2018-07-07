@@ -99,12 +99,13 @@ body {
   --back-color3: rgba(96, 157, 247, 0.548);
   --grey-color: rgba(255, 250, 250, 0.685);
   --main-color: rgba(48, 175, 226, 0.8);
+  margin: 0;
 }
 
 .screen {
   /* transform: translate(0px, -15%) rotateX(67deg) rotateY(-3deg) rotateZ(53deg); */
   transition: all 550ms ease-out;
-  overflow: hidden;
+  overflow-y: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -159,17 +160,13 @@ body {
 .Main-detail {
   background-image: linear-gradient(135deg, #c0c5ff, #adb2ff44);
   border: 1px solid rgba(255, 250, 250, 1);
-  /* transform: scaleX(0); */
-  transition: transform 500ms;
   flex: 1;
-  /* transform: translateX(-100px) translateY(-100px) translateZ(350px); */
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  margin: 0 1%;
   transition: transform 500ms;
-  /* transform: translateX(-100px) translateY(-100px) translateZ(350px); */
 }
 
 .Detail-image {
@@ -336,6 +333,11 @@ body {
   width: 50%;
 }
 
+.Footer {
+  transform: translateY(100%);
+  display: none;
+}
+
 /* TABLET */
 .tablet .Main {
   flex-direction: column;
@@ -398,6 +400,9 @@ body {
 }
 
 .mobile .Footer {
+  display: block;
+  transform: translateY(0);
+  transition: transform 500ms ease-out;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -415,4 +420,39 @@ body {
 }
 .FooterNav-item.__active {
   background-color: var(--main-color);
+}
+
+/* 3D ROTATION */
+.wrapper {
+  /* perspective: -999999px; */
+  width: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  perspective: 900px;
+  /* transform: translate(-50%, 50%) rotateX(3deg) rotateY(-20deg) rotateZ(-7deg); */
+}
+.screen {
+  width: 30%;
+  height: 30vh;
+  margin: auto;
+  /* transform: translate(-100%, 50%) rotateX(3deg) rotateY(40deg) rotateZ(-7deg); */
+  animation: arc 5000ms alternate infinite linear;
+}
+
+@keyframes arc {
+  0% {
+    perspective-origin: left;
+    transform: translate(-100%, 50%) rotateX(3deg) rotateY(40deg) rotateZ(-7deg)
+      skewY(-7deg);
+  }
+  50% {
+    perspective-origin: center;
+    transform: translate(0%, 43%) rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+      skewY(0deg);
+  }
+  100% {
+    perspective-origin: right;
+    transform: translate(100%, 50%) rotateX(-3deg) rotateY(-40deg) rotateZ(7deg)
+      skewY(7deg);
+  }
 }
