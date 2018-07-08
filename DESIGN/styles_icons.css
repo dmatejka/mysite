@@ -105,12 +105,12 @@ body {
 .screen {
   /* transform: translate(0px, -15%) rotateX(67deg) rotateY(-3deg) rotateZ(53deg); */
   transition: all 550ms ease-out;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 100%;
+  height: 20em;
+  width: 30em;
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.62) 0%,
@@ -339,6 +339,10 @@ body {
 }
 
 /* TABLET */
+.tablet.screen {
+  width: 15em;
+  height: 12em;
+}
 .tablet .Main {
   flex-direction: column;
 }
@@ -377,6 +381,11 @@ body {
 }
 
 /* MOBILE */
+.mobile.screen {
+  overflow: hidden;
+  width: 7em;
+  height: 9em;
+}
 .mobile .Header {
   height: 20%;
 }
@@ -432,13 +441,25 @@ body {
   /* transform: translate(-50%, 50%) rotateX(3deg) rotateY(-20deg) rotateZ(-7deg); */
 }
 .screen {
-  width: 30%;
-  height: 30vh;
   margin: auto;
-  /* transform: translate(-100%, 50%) rotateX(3deg) rotateY(40deg) rotateZ(-7deg); */
-  animation: arc 5000ms alternate infinite linear;
+  transform: translate(00%, 50%) rotateX(55deg) rotateY(9deg) rotateZ(-17deg);
+  /* animation: arc 5000ms alternate infinite linear; */
 }
 
+/* 3D element constructing */
+
+.Nav-item:hover,
+.Detail-image:hover,
+.List-item:hover,
+.Detail-TextContent > div:hover,
+.Button:hover {
+  transform: translate3d(-0.5em, -0.2em, 2em);
+  box-shadow: 9px 16px 18px #88888881;
+  transition: transform 150ms ease;
+  z-index: 10000;
+}
+
+/* ANIMATIONS */
 @keyframes arc {
   0% {
     perspective-origin: left;
@@ -454,5 +475,20 @@ body {
     perspective-origin: right;
     transform: translate(100%, 50%) rotateX(-3deg) rotateY(-40deg) rotateZ(7deg)
       skewY(7deg);
+  }
+}
+
+@keyframes deconstruct {
+  0% {
+    transform: translate3d(0, 0, 0);
+    box-shadow: none;
+  }
+  50% {
+    transform: translate3d(-9%, -16%, 150px);
+    box-shadow: 9px 16px 18px #88888881;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    box-shadow: none;
   }
 }
