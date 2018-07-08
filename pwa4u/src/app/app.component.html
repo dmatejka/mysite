@@ -6,31 +6,52 @@
     <mat-icon class="example-icon">delete</mat-icon>
   </mat-toolbar-row>
 </mat-toolbar> -->
-<div id="header">
+<div class="Header">
+  <div class="Logo">
+    <svg:svg width="3em" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      x="0px" y="0px" enable-background="new 0 0 800 440" version="1.1" viewBox="0 0 800 440" xml:space="preserve">
+      <svg:path class="LetterP" d="M574.62,320.7l21.378-54.06h61.725l-29.293-82.004l36.636-92.648L770,370.601h-77.386l-17.931-49.9H574.62z"
+      />
+      <svg:path class="LetterW" fill="#FFFFFF" d="M508.601,370.602L620.935,91.989h-74.474l-76.844,180.046L414.975,91.99H357.73l-58.672,180.045l-41.377-82.043l-37.444,115.361l38.018,65.248h73.291l53.02-161.461 l50.552,161.461L508.601,370.602L508.601,370.602z"
+        opacity="0.6" />
+      <svg:path class="LetterA" d="M100.693,274.958h45.872c13.896,0,26.269-1.551,37.12-4.653l11.863-36.548 l33.156-102.146c-2.526-4.004-5.411-7.79-8.652-11.357c-17.023-18.843-41.93-28.264-74.721-28.264H30v278.612h70.693V274.958 L100.693,274.958z M161.412,156.086c6.649,6.692,9.974,15.647,9.974,26.867c0,11.306-2.924,20.272-8.771,26.899 c-6.411,7.364-18.215,11.046-35.412,11.046h-26.509v-74.851h26.704C143.424,146.047,154.762,149.394,161.412,156.086 L161.412,156.086z"
+      />
+    </svg:svg>
+  </div>
   <div class="title">
-    <p class="action">Building</p>
+    <!-- <p class="action">Building</p> -->
     <p class="subject">Progressive Web Applications</p>
   </div>
+  <x5-navigation class='TopNav' [direction]=positionDirection></x5-navigation>
 </div>
-<x5-navigation id='topnav' [direction]=positionDirection *ngIf="(url != 'home')"></x5-navigation>
 
-<div class="CTA">
-  <button class="FAB" mat-fab color="primary">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-      <svg:path class="icon" d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"
-      />
-      <svg:path d="M0 0h24v24H0z" fill="none" />
-    </svg>
-  </button>
+<button class="CTA">
+  <svg:svg class="CTA-icon" width="1em" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+    y="0px" version="1.1" viewBox="0 0.583 24 39.333" xml:space="preserve">
+    <svg:g class="chatbox chatbox1">
+      <svg:path d="M5.594,1.833h15.992c1.099,0,1.988,0.9,1.988,2l0.01,18l-3.997-4H5.594c-1.099,0-1.999-0.9-1.999-2v-12
+            C3.595,2.733,4.495,1.833,5.594,1.833z" class="chat-bubble chat-bubble__1" />
+      <svg:path fill="#FFFFFF" d="M7.59,9.833c0-0.55,0.45-1,1-1h10c0.55,0,1,0.45,1,1l0,0c0,0.55-0.45,1-1,1h-10
+                C8.04,10.833,7.59,10.383,7.59,9.833L7.59,9.833z" class="chat-line chat-line__1" />
+      <svg:path fill="#FFFFFF" d="M15.59,12.833c0,0.55-0.45,1-1,1h-6c-0.55,0-1-0.45-1-1l0,0c0-0.55,0.45-1,1-1h6
+                C15.14,11.833,15.59,12.283,15.59,12.833L15.59,12.833z" class="chat-line chat-line__2" />
+      <svg:path fill="#FFFFFF" d="M19.59,6.833c0,0.55-0.45,1-1,1h-10c-0.55,0-1-0.45-1-1l0,0c0-0.55,0.45-1,1-1h10
+                C19.14,5.833,19.59,6.283,19.59,6.833L19.59,6.833z" class="chat-line chat-line__3" />
+    </svg:g>
+    <svg:g class="chatbox chatbox2">
+      <svg:path d="M18.408,1.833H2.425c-1.098,0-1.987,0.9-1.987,2l-0.01,18l3.995-4h13.985c1.099,0,1.997-0.9,1.997-2v-12
+            C20.405,2.733,19.507,1.833,18.408,1.833z" class="chat-bubble chat-bubble__1" />
+      <svg:path fill="#FFFFFF" d="M4.417,9.833c0-0.55,0.45-1,1-1h10c0.55,0,1,0.45,1,1l0,0c0,0.55-0.45,1-1,1h-10
+                C4.867,10.833,4.417,10.383,4.417,9.833L4.417,9.833z" class="chat-line chat-line__1" />
+      <svg:path fill="#FFFFFF" d="M12.417,12.833c0,0.55-0.45,1-1,1h-6c-0.55,0-1-0.45-1-1l0,0c0-0.55,0.45-1,1-1h6
+                C11.967,11.833,12.417,12.283,12.417,12.833L12.417,12.833z" class="chat-line chat-line__2" />
+      <svg:path fill="#FFFFFF" d="M16.417,6.833c0,0.55-0.45,1-1,1h-10c-0.55,0-1-0.45-1-1l0,0c0-0.55,0.45-1,1-1h10
+                C15.967,5.833,16.417,6.283,16.417,6.833L16.417,6.833z" class="chat-line chat-line__3" />
+    </svg:g>
+  </svg:svg>
+  <span class="long_text">LET'S TALK</span>
+</button>
 
-  <button class="big" mat-raised-button color="primary">
-    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24">
-      <svg:path class="icon" d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"
-      />
-      <svg:path d="M0 0h24v24H0z" fill="none" />
-    </svg>
-    LET'S TALK</button>
-</div>
 
 
 <div class="route-container" [@routeAnimations]=prepareRouteAnimation(outlet)>

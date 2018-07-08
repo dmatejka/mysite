@@ -1,19 +1,23 @@
 :host {
-  width: 100%;
+  flex: 1;
+  // width: 100%;
 }
 a {
+  height: 100%;
+  text-align: center;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: 1em 1em 0em 1em;
+  justify-content: center;
+  padding: 1em;
   color: whitesmoke;
   text-decoration: none;
   white-space: nowrap;
   .pointer {
     height: 2px;
-    width: calc(100% + 2em);
+    width: 100%;
     margin-left: -1em;
-    margin-top: 10px;
+    margin-top: 0.5em;
     display: block;
     opacity: 1;
     background-color: #ffff8d;
@@ -26,8 +30,8 @@ a {
   &.activated {
     color: white;
     font-weight: 500;
-    // opacity: 1;
-    // background-color: #ffff8d;
+    opacity: 1;
+    // background-color: #ffff8d36;
   }
 }
 
@@ -37,15 +41,6 @@ a {
 }
 .longtitle {
   display: none;
-}
-
-@media only screen and (min-width: 690px) and (min-height: 500px) {
-  .shorttitle {
-    display: none;
-  }
-  .longtitle {
-    display: block;
-  }
 }
 
 .home {
@@ -66,4 +61,22 @@ a {
 
 .SL {
   background-color: var(--main-SL-color);
+}
+
+@media only screen and (min-width: 690px) and (min-height: 500px) {
+  .shorttitle {
+    display: none;
+  }
+  .longtitle {
+    display: block;
+  }
+  .nav-item {
+    background-color: initial;
+  }
+  a.activated {
+    color: white;
+    font-weight: 500;
+    opacity: 1;
+    background-color: #ffff8d36;
+  }
 }

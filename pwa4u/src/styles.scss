@@ -1,9 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+// @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 // @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500');
+// @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500');
+
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
 
 /* CSS BROWSER RESET */
 
@@ -37,51 +39,51 @@ td {
   margin: 0;
   padding: 0;
   background-repeat: no-repeat;
-  font-family: Roboto, Verdana, Arial, Helvetica, sans-serif;
+  font-family: Comfortaa, Verdana, Arial, Helvetica, sans-serif;
   font-size: 100%;
   line-height: 1.4;
 }
-a,
-span {
-  background-repeat: no-repeat;
-  outline: none;
-}
+// a,
+// span {
+//   background-repeat: no-repeat;
+//   outline: none;
+// }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
+// table {
+//   border-collapse: collapse;
+//   border-spacing: 0;
+// }
 
-fieldset,
-img,
-abbr,
-acronym {
-  border: none;
-  text-decoration: none;
-}
+// fieldset,
+// img,
+// abbr,
+// acronym {
+//   border: none;
+//   text-decoration: none;
+// }
 
-ol,
-ul {
-  list-style: none;
-}
-caption,
-th {
-  text-align: left;
-  font-weight: normal;
-}
+// ol,
+// ul {
+//   list-style: none;
+// }
+// caption,
+// th {
+//   text-align: left;
+//   font-weight: normal;
+// }
 
-q:before,
-q:after {
-  content: '';
-}
+// q:before,
+// q:after {
+//   content: '';
+// }
 
-input,
-textarea,
-select {
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-}
+// input,
+// textarea,
+// select {
+//   font-family: inherit;
+//   font-size: inherit;
+//   font-weight: inherit;
+// }
 
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
@@ -94,9 +96,9 @@ html {
 }
 
 /* MY RESETS */
-button {
-  font-size: 14px;
-}
+// button {
+//   font-size: 14px;
+// }
 
 // body {
 //   min-width: 100vw;
@@ -106,13 +108,20 @@ button {
 /* color variables */
 
 :root {
-  --light-primary-color: #f7e7f7;
-  --lighter-primary-color: #f3dcf3;
+  --light-accent-color: #f0e2a4;
+  --lighter-accent-color: #ffdf50;
+  --main-accent-color: #ffc107;
+  --darker-accent-color: #f8b015;
+  --dark-accent-color: #e79f04;
+
+  --light-primary-color: #fae8fa;
+  --lighter-primary-color: #cb23d3;
   --main-primary-color: #86078b;
   --darker-primary-color: #6e0472;
   --dark-primary-color: #5f0263;
 
   --light-UX-color: #b8e3ff;
+  --lighter-UX-color: #2497e4;
   --main-UX-color: #0083db;
   --darker-UX-color: #005c99;
   --dark-UX-color: #004c80;
@@ -126,8 +135,8 @@ button {
   --light-SL-color: #f8dcc3;
   --lighter-SL-color: #ffbc82;
   --main-SL-color: #f8841f;
-  --darker-SL-color: #cf6100e1;
-  --dark-SL-color: #aa5505c0;
+  --darker-SL-color: #cf6100;
+  --dark-SL-color: #aa5505;
 
   --light-BE-color: #fdd0c0;
   --lighter-BE-color: #fd7f51;
@@ -139,60 +148,50 @@ button {
 /* main background */
 .home-route {
   background-color: var(--light-primary-color);
-  -webkit-transition: background-color 150ms ease-in; /* Safari */
   transition: background-color 150ms ease-in;
   #header {
     background-color: var(--dark-primary-color);
     color: var(--light-primary-color);
-    -webkit-transition: background-color 250ms ease-in; /* Safari */
     transition: background-color 250ms ease-in;
   }
 }
 
 .UX-route {
   background-color: var(--main-UX-color);
-  -webkit-transition: background-color 150ms ease-in; /* Safari */
   transition: background-color 150ms ease-in;
   #header {
     background-color: var(--dark-UX-color);
     color: var(--light-UX-color);
-    -webkit-transition: background-color 250ms ease-in; /* Safari */
     transition: background-color 250ms ease-in;
   }
 }
 
 .FE-route {
   background-color: var(--main-FE-color);
-  -webkit-transition: background-color 150ms ease-in; /* Safari */
   transition: background-color 150ms ease-in;
   #header {
     background-color: var(--dark-FE-color);
     color: var(--light-FE-color);
-    -webkit-transition: background-color 250ms ease-in; /* Safari */
     transition: background-color 250ms ease-in;
   }
 }
 
 .BE-route {
   background-color: var(--main-BE-color);
-  -webkit-transition: background-color 150ms ease-in; /* Safari */
   transition: background-color 150ms ease-in;
   #header {
     background-color: var(--dark-BE-color);
     color: var(--light-BE-color);
-    -webkit-transition: background-color 250ms ease-in; /* Safari */
     transition: background-color 250ms ease-in;
   }
 }
 
 .SL-route {
   background-color: var(--main-SL-color);
-  -webkit-transition: background-color 150ms ease-in; /* Safari */
   transition: background-color 150ms ease-in;
   #header {
     background-color: var(--dark-SL-color);
     color: var(--light-SL-color);
-    -webkit-transition: background-color 250ms ease-in; /* Safari */
     transition: background-color 250ms ease-in;
   }
 }

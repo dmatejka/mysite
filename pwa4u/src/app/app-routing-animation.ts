@@ -1,12 +1,4 @@
-import {
-  animate,
-  group,
-  keyframes,
-  query,
-  stagger,
-  style,
-  transition,
-} from '@angular/animations';
+import { animate, group, keyframes, query, stagger, style, transition } from '@angular/animations';
 
 export const basicTransition = transition('* => basic', [
   query(
@@ -67,15 +59,15 @@ export const homeTransition = transition('*=>home', [
     ),
 
     /* BACKGROIUND CIRCLE animation */
-    query('.limit ', [
-      style({
-        position: 'absolute',
-        top: '10vh',
-        opacity: 1,
-        width: '100vw',
-        height: '90vh',
-      }),
-    ]),
+    // query('.limit ', [
+    //   style({
+    //     position: 'absolute',
+    //     top: '10vh',
+    //     opacity: 1,
+    //     width: '100vw',
+    //     height: '90vh',
+    //   }),
+    // ]),
 
     query('.backgroudcircle ', [
       style({

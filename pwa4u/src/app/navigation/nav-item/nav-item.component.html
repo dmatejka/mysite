@@ -1,6 +1,3 @@
-<a [routerLink]="link" [class]=link routerLinkActive="activated">
-  <span class="pointer top" [@animatePointer]=state></span>
-  <span class="longtitle">{{title}}</span>
-  <span class="shorttitle">{{link}}</span>
-  <span class="pointer" [@animatePointer]=state></span>
+<a [routerLink]="link" class='{{link}} nav-item' routerLinkActive="activated">
+  <ng-content></ng-content>
 </a>

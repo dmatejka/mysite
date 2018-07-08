@@ -1,10 +1,4 @@
-import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -91,8 +85,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class NavItemComponent implements OnInit {
   @Input() link: string;
-  @Input() title: string;
-  @Input() state: number;
+
 
   constructor() {}
 
