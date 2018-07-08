@@ -3,17 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MyMatModules } from './material';
-import { NavigationComponent } from './navigation/navigation.component';
+import { HomepageComponent } from './home/homepage/homepage.component';
 import { NavItemComponent } from './navigation/nav-item/nav-item.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
-  declarations: [AppComponent, NavigationComponent, NavItemComponent],
+  declarations: [
+    AppComponent,
+    NavigationComponent,
+    NavItemComponent,
+    HomepageComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MyMatModules,
+    // MyMatModules,
   ],
   providers: [],
   bootstrap: [AppComponent],

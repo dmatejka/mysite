@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomepageComponent } from './home/homepage/homepage.component';
 
 const routes: Routes = [
   // {path:'', component: IntroPageComponent, data: {animation:'intro'}},
@@ -19,7 +20,8 @@ const routes: Routes = [
   // },
   {
     path: 'home',
-    loadChildren: './home/home.module#HomeModule',
+    component: HomepageComponent,
+    // loadChildren: './home/home.module#HomeModule',
     data: { animation: 'home', position: 1 },
   },
   {
