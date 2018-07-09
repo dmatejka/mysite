@@ -1,0 +1,36 @@
+.ResponsiveNames {
+  position: relative;
+  // justify-content: space-between;
+  color: white;
+  height: 2em;
+  > div {
+    transform: translateX(-2.5em);
+    width: 5em;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  // .ResponsiveNames-Desktop {
+  //   transform: translateX(-250%);
+  // }
+  // .ResponsiveNames-Mobile {
+  //   transform: translateX(200%);
+  // }
+}
+
+.ResponsiveIcons {
+  position: relative;
+  text-align: center;
+  margin: 1em 0;
+
+  > div {
+    display: inline;
+    > * {
+      // display: flex;
+      width: 15%;
+      max-height: 2em;
+      fill: white;
+    }
+  }
+}
