@@ -87,27 +87,42 @@
 :host {
   width: 100%;
   // position: absolute;
-  background-color: #f87400;
+  // background-color: #f87400;
   z-index: 100;
+  --wide: 0;
 }
 
 .WrapperTop {
-  width: 70vw;
-  max-width: 40vmax;
-  max-height: 25vmin;
-  margin: 5vmin auto;
+  width: 100vw;
+  // max-width: 40vmax;
+  // max-height: 25vmin;
+  // margin: 5vmin 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   .Crafted {
+    width: 70%;
+    margin: 1em;
+    max-width: 40vmax;
+    // height: 25em;
+  }
+  .swipearea {
     width: 100%;
-    max-height: 25vmin;
   }
 }
 
 .Background-Middle {
   height: 50vh;
   width: 100%;
-  // transform: skewY(-33deg);
+  transform: skewY(calc(var(--wide) * -10deg));
   background-color: var(--light-primary-color);
+}
+
+@media only screen and (min-width: 481px) and (min-height: 500px) {
+  :host {
+    --wide: 1;
+  }
 }
 
 @media only screen and (min-width: 1050px) and (min-height: 500px) {
