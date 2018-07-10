@@ -180,7 +180,7 @@
   padding: 0.3em;
   justify-content: center;
   width: 100%;
-  overflow-y: auto;
+  overflow: hidden;
   display: flex;
   flex-wrap: wrap;
 }
@@ -397,32 +397,16 @@
 
 /* 3D element constructing */
 
-.Nav-item:hover,
-.Detail-image:hover,
-.List-item:hover,
-.Detail-TextContent > div:hover,
-.Button:hover {
-  transform: translate3d(-0.5em, -0.2em, 2em);
-  box-shadow: 9px 16px 18px #88888881;
-  transition: transform 150ms ease;
-  z-index: 10000;
-}
-
-/* ANIMATIONS */
-@keyframes deconstruct {
-  0% {
-    transform: translate3d(0, 0, 0);
-    box-shadow: none;
-  }
-  50% {
-    transform: translate3d(-9%, -16%, 150px);
-    box-shadow: 9px 16px 18px #88888881;
-  }
-  100% {
-    transform: translate3d(0, 0, 0);
-    box-shadow: none;
-  }
-}
+// .Nav-item:hover,
+// .Detail-image:hover,
+// .List-item:hover,
+// .Detail-TextContent > div:hover,
+// .Button:hover {
+//   transform: translate3d(-0.5em, -0.2em, 2em);
+//   box-shadow: 9px 16px 18px #88888881;
+//   transition: transform 150ms ease;
+//   z-index: 10000;
+// }
 
 @media only screen and (min-width: 481px) and (min-height: 500px) {
   .screen {
