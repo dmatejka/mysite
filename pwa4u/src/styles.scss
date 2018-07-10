@@ -114,10 +114,10 @@ html {
   --darker-accent-color: #f8b015;
   --dark-accent-color: #e79f04;
 
-  --light-primary-color: #fae8fa;
-  --lighter-primary-color: #cb23d3;
-  --main-primary-color: #86078b;
-  --darker-primary-color: #6e0472;
+  --light-primary-color: #fccffc;
+  --lighter-primary-color: #e766ee;
+  --main-primary-color: rgb(208, 36, 217);
+  --darker-primary-color: #af14b4;
   --dark-primary-color: #5f0263;
 
   --light-UX-color: #b8e3ff;
@@ -151,7 +151,7 @@ body {
   background-color: var(--main-primary-color);
   transition: background-color 150ms ease-in;
   .Header {
-    background-color: var(--dark-primary-color);
+    background-color: var(--darker-primary-color);
     color: var(--light-primary-color);
     transition: background-color 250ms ease-in;
   }
@@ -159,9 +159,18 @@ body {
 
 .home-route {
   background-color: var(--main-primary-color);
+  background: rgb(208, 36, 217);
+  background: linear-gradient(
+    -10deg,
+    rgba(208, 36, 217, 1) 0%,
+    rgba(175, 17, 181, 1) 19%,
+    rgba(202, 25, 209, 1) 47%,
+    rgba(175, 17, 181, 1) 79%,
+    rgb(209, 17, 216) 100%
+  );
   transition: background-color 150ms ease-in;
   .Header {
-    background-color: var(--dark-primary-color);
+    background-color: var(--darker-primary-color);
     color: var(--light-primary-color);
     transition: background-color 250ms ease-in;
   }
@@ -171,7 +180,7 @@ body {
   background-color: var(--main-UX-color);
   transition: background-color 150ms ease-in;
   .Header {
-    background-color: var(--dark-UX-color);
+    background-color: var(--darker-UX-color);
     color: var(--light-UX-color);
     transition: background-color 250ms ease-in;
   }
@@ -181,7 +190,7 @@ body {
   background-color: var(--main-FE-color);
   transition: background-color 150ms ease-in;
   .Header {
-    background-color: var(--dark-FE-color);
+    background-color: var(--darker-FE-color);
     color: var(--light-FE-color);
     transition: background-color 250ms ease-in;
   }
@@ -191,7 +200,7 @@ body {
   background-color: var(--main-BE-color);
   transition: background-color 150ms ease-in;
   .Header {
-    background-color: var(--dark-BE-color);
+    background-color: var(--darker-BE-color);
     color: var(--light-BE-color);
     transition: background-color 250ms ease-in;
   }
@@ -201,7 +210,7 @@ body {
   background-color: var(--main-SL-color);
   transition: background-color 150ms ease-in;
   .Header {
-    background-color: var(--dark-SL-color);
+    background-color: var(--darker-SL-color);
     color: var(--light-SL-color);
     transition: background-color 250ms ease-in;
   }

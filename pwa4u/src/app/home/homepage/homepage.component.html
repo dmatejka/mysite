@@ -1,9 +1,11 @@
 <div class="WrapperTop">
-
+  <h2 class="Build"> We build</h2>
   <img class="Crafted" src="/assets/hand_crafted.svg">
-  <x5-responsive-name class="swipearea"></x5-responsive-name>
+  <p class="for">for</p>
+  <x5-responsive-name class="swipearea" [resState]='responsiveState' (ResponsiveStateEmitted)="onResponsiveStateEmitted($event)"></x5-responsive-name>
 </div>
 <div class="Background-Middle">
+  <x5-responsive-picture class="responsivePicture" [resState]='responsiveState'></x5-responsive-picture>
 
 </div>
 

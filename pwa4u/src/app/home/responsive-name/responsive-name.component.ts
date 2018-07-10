@@ -5,8 +5,14 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { Component, HostListener, Input, OnInit, Output } from '@angular/core';
-import { EventEmitter } from 'events';
+import {
+  Component,
+  EventEmitter,
+  HostListener,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
 
 type ResponsiveState = 'desktop' | 'mobile' | 'tablet';
 
@@ -89,10 +95,10 @@ type ResponsiveState = 'desktop' | 'mobile' | 'tablet';
   ],
 })
 export class ResponsiveNameComponent implements OnInit {
-  @Input() state: ResponsiveState = 'tablet';
+  @Input() resState: ResponsiveState = 'tablet';
   @Output() ResponsiveStateEmitted = new EventEmitter();
 
-  responsiveNames: Array<ResponsiveState> = ['desktop', 'tablet', 'mobile'];
+  responsiveNames: Array<ResponsiveState> = ['desktop', 'mobile', 'tablet'];
   constructor() {}
 
   ngOnInit() {}
@@ -100,9 +106,9 @@ export class ResponsiveNameComponent implements OnInit {
   @HostListener('swiperight', ['$event.type'])
   @HostListener('swipeleft', ['$event.type'])
   swipe(e) {
-    console.log('inner swipe', { e });
-    const currentIdx = this.responsiveNames.indexOf(this.state);
-    console.log('currentIdx', currentIdx, this.responsiveNames[currentIdx]);
+    // console.log('inner swipe', { e });
+    const currentIdx = this.responsiveNames.indexOf(this.resState);
+    // console.log('currentIdx', currentIdx, this.responsiveNames[currentIdx]);
     let newIdx = currentIdx;
     if (e === 'swiperight') {
       newIdx = currentIdx - 1 >= 0 ? currentIdx - 1 : 2;
@@ -110,12 +116,13 @@ export class ResponsiveNameComponent implements OnInit {
     if (e === 'swipeleft') {
       newIdx = currentIdx + 1 < 3 ? currentIdx + 1 : 0;
     }
-    console.log('newIdx', newIdx, this.responsiveNames[newIdx]);
-    this.state = this.responsiveNames[newIdx];
+    // console.log('newIdx', newIdx, this.responsiveNames[newIdx]);
+    this.resState = this.responsiveNames[newIdx];
+    this.ResponsiveStateEmitted.emit(this.resState);
   }
 
   changeState(s) {
+    this.resState = s;
     this.ResponsiveStateEmitted.emit(s);
-    this.state = s;
   }
 }

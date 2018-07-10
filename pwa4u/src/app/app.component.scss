@@ -1,6 +1,6 @@
 /* Header */
 .Header {
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -8,9 +8,9 @@
   .title {
     // justify-self: flex-start;
     text-align: left;
-    margin-left: 1vw;
+    margin-left: 1em;
     margin-right: 1vw;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--light-primary-color);
     .action {
       font-size: calc(0.2vw + 8px);
       font-weight: 200;
@@ -18,7 +18,7 @@
     .subject {
       white-space: nowrap;
       font-size: calc(0.4vw + 14px);
-      font-weight: 600;
+      font-weight: 200;
       user-select: none;
     }
   }
