@@ -4,7 +4,6 @@ import { Meta } from '@angular/platform-browser';
 import {
   ActivatedRoute,
   NavigationEnd,
-  NavigationStart,
   Router,
   RouterOutlet,
 } from '@angular/router';
@@ -63,9 +62,10 @@ export class AppComponent implements OnInit {
 
     this.router.events
       .pipe(
-        filter(event => event instanceof NavigationStart),
-        map(r => r['url'].slice(1)),
-        tap(d => console.log('ROUTE DATA:', d))
+        filter(event => event instanceof NavigationEnd),
+        tap(r => console.log('ROUTE DATA:', r)),
+        map(r => r['urlAfterRedirects'].slice(1)),
+        tap(d => console.log('ROUTE DATA URL:', d))
       )
       .subscribe(urlname => {
         this.url = urlname;

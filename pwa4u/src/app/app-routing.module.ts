@@ -46,9 +46,11 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: '/home',
     pathMatch: 'full',
   },
+  { path: '**', redirectTo: '/home', },
+  // { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
