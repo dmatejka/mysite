@@ -110,10 +110,10 @@ export class ResponsiveNameComponent implements OnInit {
     const currentIdx = this.responsiveNames.indexOf(this.resState);
     // console.log('currentIdx', currentIdx, this.responsiveNames[currentIdx]);
     let newIdx = currentIdx;
-    if (e === 'swiperight') {
+    if (e === 'swipeleft') {
       newIdx = currentIdx - 1 >= 0 ? currentIdx - 1 : 2;
     }
-    if (e === 'swipeleft') {
+    if (e === 'swiperight') {
       newIdx = currentIdx + 1 < 3 ? currentIdx + 1 : 0;
     }
     // console.log('newIdx', newIdx, this.responsiveNames[newIdx]);
