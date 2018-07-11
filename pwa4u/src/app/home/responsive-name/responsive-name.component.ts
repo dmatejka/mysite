@@ -98,7 +98,7 @@ export class ResponsiveNameComponent implements OnInit {
   @Input() resState: ResponsiveState = 'tablet';
   @Output() ResponsiveStateEmitted = new EventEmitter();
 
-  responsiveNames: Array<ResponsiveState> = ['desktop', 'mobile', 'tablet'];
+  responsiveNames: Array<ResponsiveState> = ['mobile', 'tablet', 'desktop'];
   constructor() {}
 
   ngOnInit() {}
