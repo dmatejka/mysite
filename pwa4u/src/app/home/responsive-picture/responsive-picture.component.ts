@@ -15,8 +15,8 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { from, interval, of, zip } from 'rxjs';
-import { delay, share } from 'rxjs/operators';
+import { interval, of, Subject } from 'rxjs';
+import { delay, share, take, takeUntil } from 'rxjs/operators';
 
 type ResponsiveState = 'desktop' | 'mobile' | 'tablet';
 
@@ -87,17 +87,18 @@ type ResponsiveState = 'desktop' | 'mobile' | 'tablet';
           query('.FooterNav-item', stagger(250, animate('950ms'))),
         ]),
         // *** DETAIL ***
-        query('.Main-detail', animate('350ms')),
+        query('.Main-detail', animate('450ms')),
 
-        // *** LIST ITEMS ***
         group([
-          query('.Detail-image', animate('250ms')),
+          // *** IMAGE ***
+          query('.Detail-image', animate('350ms 550ms')),
+          // *** LIST ITEMS ***
           query(
             '.List-item',
 
-            stagger('100ms cubic-bezier(0.35, 0, 0.25, 1)', animate('350ms'))
+            stagger('250ms cubic-bezier(0.35, 0, 0.25, 1)', animate('450ms'))
           ),
-          query('.TextContent-line', stagger(50, animate('200ms'))),
+          query('.TextContent-line', stagger(150, animate('250ms'))),
         ]),
       ]),
     ]),
@@ -107,38 +108,47 @@ export class ResponsivePictureComponent implements OnInit {
   @Input() resState: ResponsiveState = 'tablet';
   @Output() ResponsiveStateEmitted = new EventEmitter();
 
-  responsiveNames: Array<ResponsiveState> = ['mobile', 'tablet', 'desktop'];
+  responsiveNames: Array<ResponsiveState> = ['tablet', 'desktop', 'mobile'];
 
-  private timer$ = interval(2000); // timeer to swith between responsive type
-  private changePictures$ = zip(
-    from(this.responsiveNames),
-    this.timer$,
-    (o, t) => o
-  ).pipe(delay(1000)); // delay to start changing responsive Names
+  private timer$ = interval(3500); // timeer to swith between responsive type
+  private swiping = new Subject();
 
   public constructingState = of(true).pipe(
-    delay(3500),
+    delay(2500), // delay to start constructing responsive picture
     share()
-  ); // delay to start constructing responsive picture
+  );
 
   constructor() {}
 
   ngOnInit() {
-    this.changePictures$.subscribe(val => {
-      this.ResponsiveStateEmitted.emit(val);
-    });
+    this.timer$
+      .pipe(
+        take(3),
+        delay(2500),
+        takeUntil(this.swiping)
+      )
+      .subscribe(val => {
+        const currentIdx = this.responsiveNames.indexOf(this.resState);
+        console.log('currentIdx', currentIdx);
+        let newIdx = currentIdx;
+        newIdx = currentIdx + 1 <= 2 ? currentIdx + 1 : 0;
+        console.log('newIdx', newIdx);
+        this.resState = this.responsiveNames[newIdx];
+        this.ResponsiveStateEmitted.emit(this.resState);
+      });
   }
 
   @HostListener('swiperight', ['$event.type'])
   @HostListener('swipeleft', ['$event.type'])
   swipe(e) {
+    this.swiping.next();
     const currentIdx = this.responsiveNames.indexOf(this.resState);
     let newIdx = currentIdx;
     if (e === 'swipeleft') {
       newIdx = currentIdx - 1 >= 0 ? currentIdx - 1 : 2;
     }
     if (e === 'swiperight') {
-      newIdx = currentIdx + 1 < 3 ? currentIdx + 1 : 0;
+      newIdx = currentIdx + 1 <= 2 ? currentIdx + 1 : 0;
     }
     this.resState = this.responsiveNames[newIdx];
     this.ResponsiveStateEmitted.emit(this.resState);
