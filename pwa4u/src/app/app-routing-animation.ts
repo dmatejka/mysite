@@ -1,4 +1,11 @@
-import { animate, group, keyframes, query, stagger, style, transition } from '@angular/animations';
+import {
+  animate,
+  group,
+  keyframes,
+  query,
+  style,
+  transition,
+} from '@angular/animations';
 
 export const basicTransition = transition('* => basic', [
   query(
@@ -20,7 +27,7 @@ export const basicTransition = transition('* => basic', [
 
 // ************************* HOME **************************** //
 
-export const homeTransition = transition('*=>home', [
+export const homeTransition = transition('*=>aaa', [
   group([
     query(
       '.container',
@@ -59,21 +66,11 @@ export const homeTransition = transition('*=>home', [
     ),
 
     /* BACKGROIUND CIRCLE animation */
-    // query('.limit ', [
-    //   style({
-    //     position: 'absolute',
-    //     top: '10vh',
-    //     opacity: 1,
-    //     width: '100vw',
-    //     height: '90vh',
-    //   }),
-    // ]),
-
     query('.backgroudcircle ', [
       style({
         'z-index': -1,
         opacity: 0,
-        'background-color': 'var(--lighter-primary-color)',
+        'background-color': 'var(--darker-primary-color)',
       }),
       animate(
         '750ms ease-out',
@@ -89,38 +86,54 @@ export const homeTransition = transition('*=>home', [
   ]),
 
   // stroboscope
-  query(
-    '.container div ',
-    stagger('250ms', [
-      animate(
-        '650ms',
-        keyframes([
-          style({ opacity: 0.8, offset: 0.0 }),
-          style({ opacity: 0.6, offset: 0.1 }),
-          style({ opacity: 1, offset: 0.101 }),
-          style({ opacity: 0.6, offset: 0.2 }),
-          style({ opacity: 1, offset: 0.202 }),
-          style({ opacity: 0.8, offset: 0.205 }),
-          style({ opacity: 1, offset: 0.305 }),
-          style({ opacity: 0.8, offset: 0.308 }),
-          style({ opacity: 0.6, offset: 0.4 }),
-          style({ opacity: 1, offset: 0.405 }),
-          style({ opacity: 0.6, offset: 0.502 }),
-          style({ opacity: 1, offset: 0.508 }),
-          style({ opacity: 0.8, offset: 0.6 }),
-          style({ opacity: 1, offset: 0.7 }),
-          style({ opacity: 0.8, offset: 0.702 }),
-          style({ opacity: 1, offset: 0.8 }),
-          style({ opacity: 0.8, offset: 0.802 }),
-          style({ opacity: 1, offset: 0.9 }),
-          style({ opacity: 0.8, offset: 0.902 }),
-          style({ opacity: 1, offset: 0.908 }),
-          // style({ opacity: 0.9, offset: 1 }),
-        ])
-      ),
-    ]),
-    { optional: true }
-  ),
+  // query(
+  //   '.container div ',
+  //   stagger('250ms', [
+  //     animate(
+  //       '650ms',
+  //       keyframes([
+  //         style({ opacity: 0.8, offset: 0.0 }),
+  //         style({ opacity: 0.6, offset: 0.1 }),
+  //         style({ opacity: 1, offset: 0.101 }),
+  //         style({ opacity: 0.6, offset: 0.2 }),
+  //         style({ opacity: 1, offset: 0.202 }),
+  //         style({ opacity: 0.8, offset: 0.205 }),
+  //         style({ opacity: 1, offset: 0.305 }),
+  //         style({ opacity: 0.8, offset: 0.308 }),
+  //         style({ opacity: 0.6, offset: 0.4 }),
+  //         style({ opacity: 1, offset: 0.405 }),
+  //         style({ opacity: 0.6, offset: 0.502 }),
+  //         style({ opacity: 1, offset: 0.508 }),
+  //         style({ opacity: 0.8, offset: 0.6 }),
+  //         style({ opacity: 1, offset: 0.7 }),
+  //         style({ opacity: 0.8, offset: 0.702 }),
+  //         style({ opacity: 1, offset: 0.8 }),
+  //         style({ opacity: 0.8, offset: 0.802 }),
+  //         style({ opacity: 1, offset: 0.9 }),
+  //         style({ opacity: 0.8, offset: 0.902 }),
+  //         style({ opacity: 1, offset: 0.908 }),
+  //         // style({ opacity: 0.9, offset: 1 }),
+  //       ])
+  //     ),
+  //   ]),
+  //   { optional: true }
+  // ),
+]);
+
+export const fromHomeTransition = transition('home=>*', [
+  group([
+    query(
+      '.WrapperTop, .Background-Middle, .menu',
+      [
+        style({
+          // transform: 'scale(.1) rotate(-360deg)',
+          opacity: '*',
+        }),
+        animate('6550ms', style({ opacity: 0 })),
+      ],
+      { optional: true }
+    ),
+  ]),
 ]);
 
 // ANY TO UX Transition
@@ -154,7 +167,7 @@ export const anyToUXTransition = transition('*=>UX', [
         }),
         group([
           animate(
-            '1000ms ease-out',
+            '1500ms ease-out',
             style({
               transform: ' scale(25)',
               opacity: 0,
@@ -169,8 +182,8 @@ export const anyToUXTransition = transition('*=>UX', [
     query('.limit ', [
       style({
         'z-index': 100,
-        position: 'absolute',
-        top: '10vh',
+        position: 'relative',
+        // top: '0vh',
         opacity: 1,
         width: '100vw',
         height: '90vh',
@@ -227,7 +240,7 @@ export const anyToFETransition = transition('*=>FE', [
         }),
         group([
           animate(
-            '1000ms ease-out',
+            '1500ms ease-out',
             style({
               transform: ' scale(25)',
               opacity: 0,
@@ -241,8 +254,7 @@ export const anyToFETransition = transition('*=>FE', [
     /* BACKGROIUND CIRCLE animation */
     query('.limit ', [
       style({
-        position: 'absolute',
-        top: '10vh',
+        position: 'relative',
         opacity: 1,
         width: '100vw',
         height: '90vh',
@@ -299,7 +311,7 @@ export const anyToSLTransition = transition('*=>SL', [
         }),
         group([
           animate(
-            '1000ms ease-out',
+            '1500ms ease-out',
             style({
               transform: ' scale(25)',
               opacity: 0,
@@ -313,8 +325,7 @@ export const anyToSLTransition = transition('*=>SL', [
     /* BACKGROIUND CIRCLE animation */
     query('.limit ', [
       style({
-        position: 'absolute',
-        top: '10vh',
+        position: 'relative',
         opacity: 1,
         width: '100vw',
         height: '90vh',
@@ -371,7 +382,7 @@ export const anyToBETransition = transition('*=>BE', [
         }),
         group([
           animate(
-            '1000ms ease-out',
+            '1500ms ease-out',
             style({
               transform: ' scale(25)',
               opacity: 0,
@@ -385,8 +396,7 @@ export const anyToBETransition = transition('*=>BE', [
     /* BACKGROIUND CIRCLE animation */
     query('.limit ', [
       style({
-        position: 'absolute',
-        top: '10vh',
+        position: 'relative',
         opacity: 1,
         width: '100vw',
         height: '90vh',

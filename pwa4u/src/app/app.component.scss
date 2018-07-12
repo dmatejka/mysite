@@ -10,7 +10,7 @@
     text-align: left;
     margin-left: 1em;
     margin-right: 1vw;
-    color: var(--light-primary-color);
+    // color: var(--light-primary-color);
     .action {
       font-size: calc(0.2vw + 8px);
       font-weight: 200;
@@ -107,8 +107,6 @@
 /* BACKGROUND CIRCLE */
 .limit {
   position: relative;
-  top: 0;
-  left: 0;
   overflow: hidden;
   z-index: 5;
   .backgroudcircle {
@@ -182,7 +180,7 @@
     display: flex;
     position: relative;
 
-    transform: translateY(1em);
+    transform: translateY(0.5em);
     justify-content: flex-end;
   }
 }

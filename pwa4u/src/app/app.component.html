@@ -1,11 +1,3 @@
-<!-- <mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <span>Third Line</span>
-    <span class="example-spacer"></span>
-    <mat-icon class="example-icon">favorite</mat-icon>
-    <mat-icon class="example-icon">delete</mat-icon>
-  </mat-toolbar-row>
-</mat-toolbar> -->
 <div class="Header">
   <div class="Logo">
     <svg:svg width="3em" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -56,8 +48,8 @@
 
 <div class="route-container" [@routeAnimations]=prepareRouteAnimation(outlet)>
   <div class="limit">
+    <div class="backgroudcircle"></div>
     <router-outlet #outlet="outlet"></router-outlet>
 
-    <div class="backgroudcircle"></div>
   </div>
 </div>

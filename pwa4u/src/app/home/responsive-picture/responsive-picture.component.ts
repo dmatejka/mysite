@@ -80,11 +80,10 @@ type ResponsiveState = 'desktop' | 'mobile' | 'tablet';
           }),
         ]),
 
-        // *** NAVIGATION ***
+        // ******** ANIMATION ********
         group([
           query('.Header-title', animate('650ms')),
-          query('.Nav-item', stagger(250, animate('950ms'))),
-          query('.FooterNav-item', stagger(250, animate('950ms'))),
+          query('.Nav-item', stagger(250, animate('650ms'))),
         ]),
         // *** DETAIL ***
         query('.Main-detail', animate('450ms')),
@@ -100,6 +99,7 @@ type ResponsiveState = 'desktop' | 'mobile' | 'tablet';
           ),
           query('.TextContent-line', stagger(150, animate('250ms'))),
         ]),
+        query('.FooterNav-item', stagger(250, animate('950ms'))),
       ]),
     ]),
   ],
@@ -111,7 +111,8 @@ export class ResponsivePictureComponent implements OnInit {
   responsiveNames: Array<ResponsiveState> = ['tablet', 'desktop', 'mobile'];
 
   private timer$ = interval(3500); // timeer to swith between responsive type
-  private swiping = new Subject();
+  private swiping$ = new Subject();
+  private resState$ = of(this.resState);
 
   public constructingState = of(true).pipe(
     delay(2500), // delay to start constructing responsive picture
@@ -121,11 +122,13 @@ export class ResponsivePictureComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    this.resState$.subscribe(v => console.log(v));
+
     this.timer$
       .pipe(
         take(3),
         delay(2500),
-        takeUntil(this.swiping)
+        takeUntil(this.swiping$)
       )
       .subscribe(val => {
         const currentIdx = this.responsiveNames.indexOf(this.resState);
@@ -141,7 +144,7 @@ export class ResponsivePictureComponent implements OnInit {
   @HostListener('swiperight', ['$event.type'])
   @HostListener('swipeleft', ['$event.type'])
   swipe(e) {
-    this.swiping.next();
+    this.swiping$.next();
     const currentIdx = this.responsiveNames.indexOf(this.resState);
     let newIdx = currentIdx;
     if (e === 'swipeleft') {

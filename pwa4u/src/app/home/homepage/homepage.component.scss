@@ -1,10 +1,100 @@
+:host {
+  width: 100%;
+  // position: absolute;
+  // background-color: #f87400;
+  z-index: 100;
+  --wide: 0;
+}
+
+.WrapperTop {
+  margin: 0 2em;
+  // width: 100vw;
+  // max-width: 40vmax;
+  // max-height: 25vmin;
+  // margin: 5vmin 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .Build {
+    text-align: center;
+    color: var(--lighter-primary-color);
+    margin: 1em 0 0em 0;
+    font-size: 1.6em;
+    font-style: italic;
+    // text-shadow: 2px 2px 5px var(--lighter-primary-color);
+  }
+  .Hand {
+    width: 20em;
+    margin: 2em 0 0 0;
+    max-width: 40vmax;
+    z-index: 10;
+    // height: 25em;
+  }
+  .Crafted {
+    // margin: -1em 0 0 0;
+    // position: relative;
+    // padding: 0 0.2em;
+    // border-radius: 5px;
+    // // line-height: 1em;
+    // // text-align: right;
+    // // font-style: italic;
+    // font-size: 1em;
+    // // width: 6em;
+    // color: var(--light-primary-color);
+    // // background-color: var(--dark-primary-color);
+    // text-shadow: 1px 1px 2px var(--dark-primary-color);
+    // // box-shadow: 0px 1px 10px var(--lighter-primary-color);
+    // &:before {
+    //   position: absolute;
+    //   transform-origin: right;
+    //   transform: translateX(-100%) translateY(calc(0.5em - 2px));
+    //   content: '';
+    //   background-color: var(--dark-primary-color);
+    //   height: 4px;
+    //   width: 7em;
+    // }
+  }
+  .PWA {
+    width: 20em;
+    margin: 0.5em 0;
+    font-size: 1.4em;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 2px var(--dark-primary-color);
+  }
+  .for {
+    margin: 0.3em 0;
+    color: var(--lighter-primary-color);
+    font-style: italic;
+    font-weight: 600;
+    text-align: center;
+    // text-shadow: 0px 0px 5px var(--light-primary-color);
+    // filter: blur(1px);
+  }
+  .swipearea {
+    width: 16em;
+    margin: 1em 0;
+  }
+}
+
+.Background-Middle {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transform: skewY(calc(var(--wide) * -11deg));
+  background-color: var(--light-primary-color);
+}
+
 #menu {
   display: flex;
   align-self: flex-end;
   align-items: center;
   justify-content: center;
-  margin-top: 2em;
-  margin-bottom: 2em;
+  margin-top: 4em;
+  margin-bottom: 5em;
   // overflow: hidden;
   .container {
     display: flex;
@@ -35,26 +125,26 @@
       }
     }
     .UX {
-      background-color: #0083db;
+      background-color: var(--main-UX-color);
       z-index: 4;
       /* transform-origin: 2em 2em; */
     }
 
     .FE {
       z-index: 3;
-      background-color: #00b5db;
+      background-color: var(--main-FE-color);
       /* transform-origin: -2em 2em; */
     }
 
     .BE {
       z-index: 2;
-      background-color: #f84400;
+      background-color: var(--main-BE-color);
       /* transform-origin: 2em -2em; */
     }
 
     .SL {
       z-index: 1;
-      background-color: #f87400;
+      background-color: var(--main-SL-color);
       /* transform-origin: -2em -2em; */
     }
   }
@@ -84,59 +174,27 @@
   transform-origin: 100% 0%;
 }
 
-:host {
-  width: 100%;
-  // position: absolute;
-  // background-color: #f87400;
-  z-index: 100;
-  --wide: 0;
-}
-
-.WrapperTop {
-  width: 100vw;
-  // max-width: 40vmax;
-  // max-height: 25vmin;
-  // margin: 5vmin 2em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .Build {
-    color: var(--light-primary-color);
-    margin: 1em 0 -0.5em 0;
-    font-size: 2em;
-    text-shadow: 2px 2px 5px var(--darker-primary-color);
-  }
-  .Crafted {
-    width: 70%;
-    margin: 1em;
-    max-width: 40vmax;
-    // height: 25em;
-  }
-  .for {
-    margin: -1.5em 0 0.3em 0;
-    color: var(--dark-primary-color);
-    font-style: italic;
-    filter: blur(1px);
-  }
-  .swipearea {
-    width: 100%;
-  }
-}
-
-.Background-Middle {
-  height: 50vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  transform: skewY(calc(var(--wide) * -10deg));
-  background-color: var(--light-primary-color);
-}
-
 @media only screen and (min-width: 481px) and (min-height: 500px) {
   :host {
     --wide: 1;
+  }
+  .WrapperTop {
+    // width: 35vw;
+    margin: 0 35% 0 2em;
+    // align-items: flex-start;
+    .PWA {
+      // width: 20em;
+      // margin: 0.5em 0;
+      font-size: 1.7em;
+    }
+    .swipearea {
+      // width: 16em;
+      margin: 1.5em 0 0 0;
+    }
+  }
+  .Background-Middle {
+    height: 45vh;
+    overflow: initial;
   }
 }
 
