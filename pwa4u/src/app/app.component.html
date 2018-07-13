@@ -47,9 +47,8 @@
 
 
 <div class="route-container" [@routeAnimations]=prepareRouteAnimation(outlet)>
-  <div class="limit">
-    <div class="backgroudcircle"></div>
-    <router-outlet #outlet="outlet"></router-outlet>
+  <div class="backgroudcircle"></div>
+  <router-outlet #outlet="outlet"></router-outlet>
 
-  </div>
 </div>
+<x5-navigation class='BottomNav' [direction]=positionDirection></x5-navigation>

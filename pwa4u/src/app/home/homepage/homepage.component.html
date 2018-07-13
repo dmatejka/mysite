@@ -1,29 +1,31 @@
-<div class="WrapperTop">
-  <!-- <h2 class="Build"> Building</h2> -->
-  <img class="Hand" src="/assets/hand_crafted.svg">
-  <!-- <p class="Crafted">crafted</p> -->
-  <p class="PWA">Progressive Web Apps</p>
-  <!-- <p class="for">for</p> -->
-  <x5-responsive-name class="swipearea" [resState]='responsiveState' (ResponsiveStateEmitted)="onResponsiveStateEmitted($event)"></x5-responsive-name>
-</div>
-<div class="Background-Middle">
-  <x5-responsive-picture class="responsivePicture" [resState]='responsiveState' (ResponsiveStateEmitted)="onResponsiveStateEmitted($event)"></x5-responsive-picture>
+<div class="content-homepage">
+  <div class="WrapperTop">
+    <!-- <h2 class="Build"> Building</h2> -->
+    <img class="Hand" src="/assets/hand_crafted.svg">
+    <!-- <p class="Crafted">crafted</p> -->
+    <p class="PWA">Progressive Web Apps</p>
+    <!-- <p class="for">for</p> -->
+    <x5-responsive-name class="swipearea" [resState]='responsiveState' (ResponsiveStateEmitted)="onResponsiveStateEmitted($event)"></x5-responsive-name>
+  </div>
+  <div class="Background-Middle">
+    <x5-responsive-picture class="responsivePicture" [resState]='responsiveState' (ResponsiveStateEmitted)="onResponsiveStateEmitted($event)"></x5-responsive-picture>
 
-</div>
+  </div>
 
-<div class="menu" id="menu">
-  <div class=" container ">
-    <div class="UX " id="UX-menu " (click)="onMenuClick( 'UX') ">
-      <span>UX/UI</span>
-    </div>
-    <div class="FE " id="FE-menu " (click)="onMenuClick( 'FE') ">
-      <span>FrontEnd</span>
-    </div>
-    <div class="SL " id="SL-menu " (click)="onMenuClick( 'SL') ">
-      <span>Serverless</span>
-    </div>
-    <div class="BE " id="BE-menu " (click)="onMenuClick( 'BE') ">
-      <span>BeckEnd</span>
+  <div class="menu" id="menu">
+    <div class=" container ">
+      <div class="UX " id="UX-menu " (click)="onMenuClick( 'UX') ">
+        <span>UX/UI</span>
+      </div>
+      <div class="FE " id="FE-menu " (click)="onMenuClick( 'FE') ">
+        <span>FrontEnd</span>
+      </div>
+      <div class="SL " id="SL-menu " (click)="onMenuClick( 'SL') ">
+        <span>Serverless</span>
+      </div>
+      <div class="BE " id="BE-menu " (click)="onMenuClick( 'BE') ">
+        <span>BeckEnd</span>
+      </div>
     </div>
   </div>
 </div>

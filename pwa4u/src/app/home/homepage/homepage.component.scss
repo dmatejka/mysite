@@ -1,13 +1,23 @@
 :host {
-  width: 100%;
-  // position: absolute;
-  // background-color: #f87400;
-  z-index: 100;
   --wide: 0;
+  width: 100%;
+  position: absolute;
+  background-color: var(--main-primary-color);
+  background: linear-gradient(
+    -10deg,
+    rgba(208, 36, 217, 1) 0%,
+    rgba(175, 17, 181, 1) 19%,
+    rgba(202, 25, 209, 1) 47%,
+    rgba(175, 17, 181, 1) 79%,
+    rgb(209, 17, 216) 100%
+  );
+  transition: background-color 150ms ease-in;
+  overflow: hidden;
 }
 
 .WrapperTop {
   margin: 0 2em;
+  overflow: hidden;
   // width: 100vw;
   // max-width: 40vmax;
   // max-height: 25vmin;
@@ -55,7 +65,7 @@
     // }
   }
   .PWA {
-    width: 20em;
+    // width: 20em;
     margin: 0.5em 0;
     font-size: 1.4em;
     text-align: center;

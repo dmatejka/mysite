@@ -7,27 +7,207 @@ import {
   transition,
 } from '@angular/animations';
 
-export const basicTransition = transition('* => basic', [
-  query(
-    ':enter',
-    [
-      style({
-        opacity: 0,
-      }),
-      animate(
-        '3000ms',
-        style({
-          opacity: 1,
-        })
-      ),
-    ],
-    { optional: true }
-  ),
-]);
+// export const basicTransition = transition('* => basic', [
+//   query(
+//     ':enter',
+//     [
+//       style({
+//         opacity: 0,
+//       }),
+//       animate(
+//         '3000ms',
+//         style({
+//           opacity: 1,
+//         })
+//       ),
+//     ],
+//     { optional: true }
+//   ),
+// ]);
 
 // ************************* HOME **************************** //
 
-export const homeTransition = transition('*=>aaa', [
+export const horizontTransition = transition('home=>*', [
+  query(
+    ':enter, :leave',
+    [
+      style({
+        // opacity: 1,
+        // height: '90vh',
+        // overflow: 'hidden',
+      }),
+    ],
+    {
+      optional: true,
+    }
+  ),
+  group([
+    query(
+      ':leave',
+      [style({ opacity: 1 }), animate('.5s ease-out', style({ opacity: 0 }))],
+      { optional: true }
+    ),
+    query(
+      ':leave > *',
+      [
+        style({ opacity: 1 }),
+        animate(
+          '.5s ease-out',
+          style({ opacity: 0, transform: 'translateX(-100%)' })
+        ),
+      ],
+      { optional: true }
+    ),
+    query(
+      ':enter > *',
+      [
+        style({ opacity: 0, transform: 'translate(100%)' }),
+        animate(
+          '.5s ease-out',
+          style({
+            opacity: 1,
+            transform: 'translateX(0%)',
+            // 'background-color': 'red',
+          })
+        ),
+      ],
+      { optional: true }
+    ),
+  ]),
+]);
+
+export const horizontRTransition = transition('*=>home', [
+  query(
+    ':enter, :leave',
+    [
+      style({
+        // opacity: 1,
+        // height: '90vh',
+        // overflow: 'hidden',
+      }),
+    ],
+    {
+      optional: true,
+    }
+  ),
+  group([
+    query(
+      ':leave',
+      [style({ opacity: 1 }), animate('.5s ease-out', style({ opacity: 0 }))],
+      { optional: true }
+    ),
+    query(
+      ':leave > *',
+      [
+        style({ opacity: 1 }),
+        animate(
+          '.5s ease-out',
+          style({ opacity: 0, transform: 'translateX(100%)' })
+        ),
+      ],
+      { optional: true }
+    ),
+    query(
+      ':enter > *',
+      [
+        style({ opacity: 0, transform: 'translate(-100%)' }),
+        animate(
+          '.5s ease-out',
+          style({
+            opacity: 1,
+            transform: 'translateX(0%)',
+            // 'background-color': 'red',
+          })
+        ),
+      ],
+      { optional: true }
+    ),
+  ]),
+]);
+
+export const fromHomeTransition = transition('home=>*', [
+  query(
+    ':enter, :leave',
+    [
+      style({
+        // opacity: 1,
+        // height: '90vh',
+        // overflow: 'hidden',
+      }),
+    ],
+    {
+      optional: true,
+    }
+  ),
+  group([
+    query(
+      ':leave',
+      [
+        style({ opacity: 1 }),
+        animate('.5s', style({ opacity: 1, transform: 'translateY(-100%)' })),
+      ],
+      { optional: true }
+    ),
+    query(
+      ':enter',
+      [
+        style({ opacity: 1, transform: 'translateY(100%)' }),
+        animate(
+          '.5s',
+          style({
+            opacity: 1,
+            transform: 'translateY(0%)',
+            // 'background-color': 'red',
+          })
+        ),
+      ],
+      { optional: true }
+    ),
+  ]),
+]);
+
+export const toHomeTransition = transition('*=>home', [
+  query(
+    ':enter, :leave',
+    [
+      style({
+        opacity: 1,
+        height: '90vh',
+        overflow: 'hidden',
+      }),
+    ],
+    {
+      optional: true,
+    }
+  ),
+  group([
+    query(
+      ':leave',
+      [
+        style({ opacity: 1 }),
+        animate('.5s', style({ opacity: 1, transform: 'translateY(100%)' })),
+      ],
+      { optional: true }
+    ),
+    query(
+      ':enter',
+      [
+        style({ transform: 'translateY(-100%)' }),
+        animate(
+          '.5s',
+          style({
+            opacity: 1,
+            transform: 'translateY(0%)',
+            // 'background-color': 'red',
+          })
+        ),
+      ],
+      { optional: true }
+    ),
+  ]),
+]);
+
+export const homeTransition = transition('*=>home', [
   group([
     query(
       '.container',
@@ -118,22 +298,6 @@ export const homeTransition = transition('*=>aaa', [
   //   ]),
   //   { optional: true }
   // ),
-]);
-
-export const fromHomeTransition = transition('home=>*', [
-  group([
-    query(
-      '.WrapperTop, .Background-Middle, .menu',
-      [
-        style({
-          // transform: 'scale(.1) rotate(-360deg)',
-          opacity: '*',
-        }),
-        animate('6550ms', style({ opacity: 0 })),
-      ],
-      { optional: true }
-    ),
-  ]),
 ]);
 
 // ANY TO UX Transition

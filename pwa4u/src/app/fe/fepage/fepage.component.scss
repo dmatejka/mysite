@@ -1,0 +1,10 @@
+:host {
+  width: 100%;
+  position: absolute;
+  background-color: var(--main-FE-color);
+  transition: background-color 150ms ease-in;
+  overflow: hidden;
+}
+.content-page {
+  min-height: 150vh;
+}

@@ -1,5 +1,7 @@
 /* Header */
 .Header {
+  position: relative;
+  z-index: 1000;
   padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
@@ -22,12 +24,9 @@
       user-select: none;
     }
   }
-  .TopNav {
-    z-index: 20000;
-    flex: 1;
-    display: flex;
-    position: relative;
-  }
+}
+.TopNav {
+  display: none;
 }
 
 /* Call To Action */
@@ -106,9 +105,9 @@
 
 /* BACKGROUND CIRCLE */
 .limit {
-  position: relative;
-  overflow: hidden;
-  z-index: 5;
+  // position: relative;
+  // overflow: hidden;
+  // z-index: 5;
   .backgroudcircle {
     position: absolute;
     transform-origin: 50% 50%;
@@ -119,6 +118,13 @@
     width: 10px;
     height: 10px;
   }
+}
+
+.BottomNav {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  z-index: 5000;
 }
 
 /* ************ Animations ************ */
@@ -175,11 +181,14 @@
 }
 
 @media only screen and (min-width: 690px) and (min-height: 500px) {
+  .BottomNav {
+    display: none;
+  }
   .TopNav {
     z-index: 20000;
     display: flex;
     position: relative;
-
+    flex: 1;
     transform: translateY(0.5em);
     justify-content: flex-end;
   }

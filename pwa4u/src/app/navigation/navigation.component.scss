@@ -1,6 +1,6 @@
 nav {
   width: 100%;
-  position: fixed;
+  // position: fixed;
   bottom: 0;
   right: 0;
   display: flex;
@@ -41,7 +41,7 @@ nav {
   nav {
     width: initial;
     // transform: translateY(1em);
-    position: relative;
+    // position: relative;
     font-size: calc(10px + 0.3vw);
     .home {
       display: block;

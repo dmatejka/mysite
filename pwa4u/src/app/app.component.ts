@@ -9,12 +9,8 @@ import {
 } from '@angular/router';
 import { filter, map, tap } from 'rxjs/operators';
 import {
-  anyToBETransition,
-  anyToFETransition,
-  anyToSLTransition,
-  anyToUXTransition,
-  basicTransition,
-  homeTransition,
+  horizontRTransition,
+  horizontTransition,
 } from './app-routing-animation';
 
 @Component({
@@ -23,13 +19,16 @@ import {
   styleUrls: ['./app.component.scss'],
   animations: [
     trigger('routeAnimations', [
-      basicTransition,
-
-      homeTransition,
-      anyToUXTransition,
-      anyToFETransition,
-      anyToSLTransition,
-      anyToBETransition,
+      horizontTransition,
+      horizontRTransition,
+      // basicTransition,
+      // homeTransition,
+      // fromHomeTransition,
+      // toHomeTransition,
+      // anyToUXTransition,
+      // anyToFETransition,
+      // anyToSLTransition,
+      // anyToBETransition,
     ]),
   ],
 })
