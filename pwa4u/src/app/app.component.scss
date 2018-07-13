@@ -1,30 +1,102 @@
 /* Header */
+// .Header {
+//   position: relative;
+//   z-index: 1000;
+//   padding: 0.5rem 1rem;
+//   display: flex;
+//   align-items: center;
+//   justify-content: flex-start;
+//   flex-wrap: wrap;
+//   .title {
+//     // justify-self: flex-start;
+//     text-align: left;
+//     margin-left: 1em;
+//     margin-right: 1vw;
+//     // color: var(--light-primary-color);
+//     .action {
+//       font-size: calc(0.2vw + 8px);
+//       font-weight: 200;
+//     }
+//     .subject {
+//       white-space: nowrap;
+//       font-size: calc(0.4vw + 14px);
+//       font-weight: 200;
+//       user-select: none;
+//     }
+//   }
+// }
+
 .Header {
-  position: relative;
-  z-index: 1000;
   padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
+
   justify-content: flex-start;
   flex-wrap: wrap;
-  .title {
-    // justify-self: flex-start;
-    text-align: left;
-    margin-left: 1em;
-    margin-right: 1vw;
-    // color: var(--light-primary-color);
-    .action {
-      font-size: calc(0.2vw + 8px);
-      font-weight: 200;
-    }
-    .subject {
-      white-space: nowrap;
-      font-size: calc(0.4vw + 14px);
-      font-weight: 200;
-      user-select: none;
-    }
+  // color: var(--light-UX-color);
+  // background-color: var(--darker-UX-color);
+}
+
+.title {
+  flex: 1;
+  margin: 0 1rem;
+  /* grid-column: 2/3; */
+  /* grid-row: 1/3; */
+  /* grid-row-end: 2; */
+  display: grid;
+  align-items: flex-end;
+  white-space: nowrap;
+  // grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  /* padding: 5px 10px; */
+  .subject {
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
+
+.Logo {
+  align-self: center;
+  // grid-row: 1/3;
+}
+.button-back {
+  margin-left: -0.5rem;
+  padding: 0.8rem;
+  // align-self: center;
+  /* background-color: rgb(0, 0, 0, 0.3); */
+  color: antiquewhite;
+  /* width: 1rem;
+  height: 1rem; */
+
+  // grid-row: 1/3;
+  &:focus {
+    outline: none;
+  }
+}
+.button-back:active {
+  transform: translateX(-10px);
+  transition: transform 250ms ease-out;
+}
+.button-back:active svg {
+  opacity: 1;
+  transition: opacity 250ms ease-out;
+  /* fill: white; */
+  /* transform: translateX(-5px); */
+}
+
+.button-back svg {
+  opacity: 0.6;
+  fill: white;
+  width: 1.5rem;
+}
+
+h1 {
+  font-size: 1.3em;
+  /* font-weight: 400; */
+  margin-left: 1rem;
+  // grid-row-end: -1;
+}
+
 .TopNav {
   display: none;
 }
@@ -181,6 +253,9 @@
 }
 
 @media only screen and (min-width: 690px) and (min-height: 500px) {
+  .button-back {
+    display: none;
+  }
   .BottomNav {
     display: none;
   }

@@ -173,6 +173,9 @@ body {
     background-color: var(--darker-primary-color);
     color: var(--light-primary-color);
     transition: background-color 250ms ease-in;
+    .button-back {
+      display: none;
+    }
   }
 }
 
